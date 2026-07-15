@@ -107,3 +107,91 @@ Today, I learned how to declare variables and use different data types in Java. 
 **365 Days of Java Challenge** 🚀
 **Day 2 Completed** ✅
 
+
+
+# Day 3 - Operators in Java
+
+## Program
+
+**Operators in Java**
+
+### Objective
+
+Learn how to perform arithmetic calculations, compare values, and use logical operations in Java.
+
+### Code
+
+```java
+public class Day03_Operators {
+    public static void main(String[] args) {
+
+        int a = 15;
+        int b = 4;
+
+        // Arithmetic Operators
+        System.out.println("Arithmetic Operators:");
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b));
+        System.out.println("Modulus: " + (a % b));
+
+        // Relational Operators
+        System.out.println("\nRelational Operators:");
+        System.out.println("a > b : " + (a > b));
+        System.out.println("a < b : " + (a < b));
+        System.out.println("a == b : " + (a == b));
+        System.out.println("a != b : " + (a != b));
+
+        // Logical Operators
+        boolean x = true;
+        boolean y = false;
+
+        System.out.println("\nLogical Operators:");
+        System.out.println("x && y : " + (x && y));
+        System.out.println("x || y : " + (x || y));
+        System.out.println("!x : " + (!x));
+    }
+}
+```
+
+### Concepts Covered
+
+* Arithmetic Operators (`+`, `-`, `*`, `/`, `%`)
+* Relational Operators (`>`, `<`, `>=`, `<=`, `==`, `!=`)
+* Logical Operators (`&&`, `||`, `!`)
+* Expression Evaluation
+* Boolean Values
+
+### Output
+
+```
+Arithmetic Operators:
+Addition: 19
+Subtraction: 11
+Multiplication: 60
+Division: 3
+Modulus: 3
+
+Relational Operators:
+a > b : true
+a < b : false
+a == b : false
+a != b : true
+
+Logical Operators:
+x && y : false
+x || y : true
+!x : false
+```
+
+### Learning Summary
+
+Today, I learned about Java operators and how they are used to perform calculations, compare values, and evaluate logical conditions. These operators are essential for writing programs that make decisions and process data efficiently.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 3 Completed** ✅
+
+
