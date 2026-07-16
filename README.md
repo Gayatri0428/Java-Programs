@@ -195,3 +195,76 @@ Today, I learned about Java operators and how they are used to perform calculati
 **Day 3 Completed** ✅
 
 
+# Day 4 - User Input Using Scanner
+
+## Program
+
+**Taking User Input in Java**
+
+### Objective
+
+Learn how to take dynamic input from the user using the `Scanner` class in Java.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day04_UserInput {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+
+        System.out.print("Enter your CGPA: ");
+        double cgpa = sc.nextDouble();
+
+        System.out.println("\n--- Student Details ---");
+        System.out.println("Name : " + name);
+        System.out.println("Age  : " + age);
+        System.out.println("CGPA : " + cgpa);
+
+        sc.close();
+    }
+}
+```
+
+## Sample Output
+
+```text
+Enter your name: Gayatri
+Enter your age: 19
+Enter your CGPA: 8.35
+
+--- Student Details ---
+Name : Gayatri
+Age  : 19
+CGPA : 8.35
+```
+
+## Concepts Covered
+
+* `Scanner` class
+* `nextLine()`
+* `nextInt()`
+* `nextDouble()`
+* Taking dynamic input from the user
+* Displaying user input
+* Closing the `Scanner` object
+
+## Learning Summary
+
+Today, I learned how to take dynamic input from the user using the `Scanner` class in Java. I practiced reading String, integer, and decimal values using different Scanner methods.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 4 Completed** ✅
+
+
+
