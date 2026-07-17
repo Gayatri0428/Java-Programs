@@ -267,4 +267,72 @@ Today, I learned how to take dynamic input from the user using the `Scanner` cla
 **Day 4 Completed** ✅
 
 
+# Day 5 - Conditional Statements
+
+## Program
+
+**Conditional Statements in Java**
+
+### Objective
+
+Learn how to use conditional statements to make decisions in a Java program based on different conditions.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day05_ConditionalStatements {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your marks: ");
+        int marks = sc.nextInt();
+
+        if (marks >= 90) {
+            System.out.println("Grade: A");
+        } else if (marks >= 75) {
+            System.out.println("Grade: B");
+        } else if (marks >= 60) {
+            System.out.println("Grade: C");
+        } else if (marks >= 40) {
+            System.out.println("Grade: D");
+        } else {
+            System.out.println("Result: Fail");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `if` statement
+* `else if` statement
+* `else` statement
+* Conditional expressions
+* Comparison operators
+* Decision-making in Java
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text
+Enter your marks: 85
+Grade: B
+```
+
+## Learning Summary
+
+Today, I learned how to use conditional statements in Java to make decisions based on the user's marks. I practiced using `if`, `else if`, and `else` statements to determine the appropriate grade.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 5 Completed** ✅
+
+
+
 
