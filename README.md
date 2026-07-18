@@ -334,5 +334,89 @@ Today, I learned how to use conditional statements in Java to make decisions bas
 **Day 5 Completed** ✅
 
 
+# Day 6 - Loops in Java
+
+## Program
+
+**Loops in Java**
+
+### Objective
+
+Learn how to execute a block of code repeatedly using different types of loops in Java.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day06_Loops {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        System.out.println("\nFor Loop:");
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i + " ");
+        }
+
+        System.out.println("\n\nWhile Loop:");
+        int i = 1;
+        while (i <= n) {
+            System.out.print(i + " ");
+            i++;
+        }
+
+        System.out.println("\n\nDo-While Loop:");
+        int j = 1;
+        do {
+            System.out.print(j + " ");
+            j++;
+        } while (j <= n);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `for` loop
+* `while` loop
+* `do-while` loop
+* Loop initialization
+* Loop condition
+* Increment operation
+* Repeated execution
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text
+Enter a number: 5
+
+For Loop:
+1 2 3 4 5
+
+While Loop:
+1 2 3 4 5
+
+Do-While Loop:
+1 2 3 4 5
+```
+
+## Learning Summary
+
+Today, I learned about the different types of loops in Java. I practiced using `for`, `while`, and `do-while` loops to repeatedly execute a block of code based on a condition.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 6 Completed** ✅
+
+
+
 
 
