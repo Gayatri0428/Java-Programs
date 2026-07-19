@@ -417,6 +417,73 @@ Today, I learned about the different types of loops in Java. I practiced using `
 **Day 6 Completed** ✅
 
 
+# Day 7 - Pattern Printing
+
+## Program
+
+**Pattern Printing Using Nested Loops in Java**
+
+### Objective
+
+Learn how to use nested `for` loops to print patterns in Java.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day07_PatternPrinting {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Nested `for` loops
+* Outer loop for rows
+* Inner loop for columns
+* Pattern printing
+* Dynamic input using `Scanner`
+* Understanding loop execution
+
+## Sample Output
+
+```text
+Enter the number of rows: 5
+
+*
+* *
+* * *
+* * * *
+* * * * *
+```
+
+## Learning Summary
+
+Today, I learned how to use nested loops in Java to print patterns. I understood how the outer loop controls the number of rows and the inner loop controls the number of elements printed in each row.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 7 Completed** ✅
+
+
+
 
 
 
