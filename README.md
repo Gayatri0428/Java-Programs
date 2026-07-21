@@ -554,6 +554,81 @@ Today, I learned how to create and use arrays in Java. I practiced taking the ar
 **Day 8 Completed** ✅
 
 
+# Day 9 - Array Sum and Average
+
+## Program
+
+**Calculate the Sum and Average of Array Elements**
+
+### Objective
+
+Learn how to calculate the sum and average of elements in an array using a loop.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day09_ArraySumAndAverage {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+        int sum = 0;
+
+        System.out.println("Enter " + n + " elements:");
+
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+            sum += numbers[i];
+        }
+
+        double average = (double) sum / n;
+
+        System.out.println("\nSum: " + sum);
+        System.out.println("Average: " + average);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Arrays
+* Array traversal
+* `for` loop
+* Sum calculation
+* Average calculation
+* Type casting from `int` to `double`
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text
+Enter the number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+
+Sum: 150
+Average: 30.0
+```
+
+## Learning Summary
+
+Today, I learned how to calculate the sum and average of array elements. I used a `for` loop to traverse the array and added each element to calculate the total sum. I also learned how type casting helps calculate the average accurately.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 9 Completed** ✅
+
+
+
 
 
 
