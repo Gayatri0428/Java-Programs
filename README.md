@@ -481,6 +481,78 @@ Today, I learned how to use nested loops in Java to print patterns. I understood
 
 **365 Days of Java Challenge** 🚀
 **Day 7 Completed** ✅
+# Day 8 - Arrays in Java
+
+## Program
+
+**Array Input and Traversal in Java**
+
+### Objective
+
+Learn how to create an array, store multiple values, accept elements dynamically from the user, and traverse the array using loops.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day08_Arrays {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+
+        System.out.println("\nArray Elements:");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Array declaration
+* Array initialization
+* Dynamic array size
+* Storing multiple values in an array
+* Accessing array elements using indexes
+* Array traversal using `for` loops
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text
+Enter the number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+
+Array Elements:
+10 20 30 40 50
+```
+
+## Learning Summary
+
+Today, I learned how to create and use arrays in Java. I practiced taking the array size and elements dynamically from the user and traversing the array using a `for` loop.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 8 Completed** ✅
+
 
 
 
