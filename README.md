@@ -628,6 +628,89 @@ Today, I learned how to calculate the sum and average of array elements. I used 
 **Day 9 Completed** ✅
 
 
+# Day 10 - Largest and Smallest Element
+
+## Program
+
+**Find the Largest and Smallest Element in an Array**
+
+### Objective
+
+Learn how to find the maximum and minimum values in an array using a loop and conditional statements.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day10_LargestSmallest {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+
+        int largest = numbers[0];
+        int smallest = numbers[0];
+
+        for (int i = 1; i < n; i++) {
+            if (numbers[i] > largest) {
+                largest = numbers[i];
+            }
+
+            if (numbers[i] < smallest) {
+                smallest = numbers[i];
+            }
+        }
+
+        System.out.println("\nLargest Element: " + largest);
+        System.out.println("Smallest Element: " + smallest);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Arrays
+* Array traversal
+* Finding the maximum element
+* Finding the minimum element
+* `if` conditions
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text
+Enter the number of elements: 5
+Enter 5 elements:
+25 10 45 5 30
+
+Largest Element: 45
+Smallest Element: 5
+```
+
+## Learning Summary
+
+Today, I learned how to find the largest and smallest elements in an array. I initialized both values with the first array element and compared the remaining elements using conditional statements.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 10 Completed** ✅
+
+
+
 
 
 
