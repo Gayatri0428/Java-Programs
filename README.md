@@ -710,6 +710,91 @@ Today, I learned how to find the largest and smallest elements in an array. I in
 **Day 10 Completed** ✅
 
 
+# Day 11 - Linear Search
+
+## Program
+
+**Search for an Element in an Array Using Linear Search**
+
+### Objective
+
+Learn how to search for a specific element in an array by checking each element one by one.
+
+### Code
+
+```java id="1y43j6"
+import java.util.Scanner;
+
+public class Day11_SearchElement {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter the element to search: ");
+        int target = sc.nextInt();
+
+        boolean found = false;
+
+        for (int i = 0; i < n; i++) {
+            if (numbers[i] == target) {
+                System.out.println("Element found at index: " + i);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Element not found");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Arrays
+* Linear Search
+* Array traversal
+* `for` loop
+* `if` condition
+* Boolean variable
+* `break` statement
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text id="9r6ry3"
+Enter the number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+Enter the element to search: 30
+
+Element found at index: 2
+```
+
+## Learning Summary
+
+Today, I learned how to perform a linear search in an array. The program checks each element one by one until the target element is found. I also learned how to use a boolean variable to track whether the element exists in the array.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 11 Completed** ✅
+
+
+
 
 
 
