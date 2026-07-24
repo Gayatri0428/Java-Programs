@@ -793,6 +793,77 @@ Today, I learned how to perform a linear search in an array. The program checks 
 **365 Days of Java Challenge** 🚀
 **Day 11 Completed** ✅
 
+# Day 12 - Reverse an Array
+
+## Program
+
+**Reverse the Elements of an Array**
+
+### Objective
+
+Learn how to traverse an array in reverse order and display its elements from the last index to the first index.
+
+### Code
+
+```java id="b7ud3j"
+import java.util.Scanner;
+
+public class Day12_ReverseArray {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+
+        System.out.println("\nArray in Reverse Order:");
+
+        for (int i = n - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + " ");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Arrays
+* Array indexes
+* Reverse traversal
+* `for` loop
+* Dynamic input using `Scanner`
+* Accessing elements from the last index to the first index
+
+## Sample Output
+
+```text id="m0zv0r"
+Enter the number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+
+Array in Reverse Order:
+50 40 30 20 10
+```
+
+## Learning Summary
+
+Today, I learned how to reverse the order of elements in an array. Instead of traversing the array from index `0` to `n - 1`, I traversed it from the last index `n - 1` to the first index `0`.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 12 Completed** ✅
+
+
 
 
 
