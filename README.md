@@ -863,6 +863,86 @@ Today, I learned how to reverse the order of elements in an array. Instead of tr
 **365 Days of Java Challenge** 🚀
 **Day 12 Completed** ✅
 
+# Day 13 - Array Palindrome
+
+## Program
+
+**Check Whether an Array Is a Palindrome**
+
+### Objective
+
+Learn how to check whether an array reads the same from left to right and right to left.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day13_ArrayPalindrome {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+
+        boolean isPalindrome = true;
+
+        for (int i = 0; i < n / 2; i++) {
+            if (numbers[i] != numbers[n - 1 - i]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome) {
+            System.out.println("The array is a palindrome.");
+        } else {
+            System.out.println("The array is not a palindrome.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Arrays
+* Array indexing
+* Comparing elements from both ends
+* `for` loop
+* Boolean variables
+* `break` statement
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text
+Enter the number of elements: 5
+Enter 5 elements:
+1 2 3 2 1
+
+The array is a palindrome.
+```
+
+## Learning Summary
+
+Today, I learned how to check whether an array is a palindrome. I compared the first element with the last element, the second element with the second-last element, and continued until the middle of the array.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 13 Completed** ✅
+
+
 
 
 
