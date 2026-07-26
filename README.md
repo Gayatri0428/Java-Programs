@@ -942,6 +942,90 @@ Today, I learned how to check whether an array is a palindrome. I compared the f
 **365 Days of Java Challenge** 🚀
 **Day 13 Completed** ✅
 
+# Day 14 - Sorting an Array
+
+## Program
+
+**Sort an Array in Ascending Order Using Bubble Sort**
+
+### Objective
+
+Learn how to sort array elements in ascending order using the Bubble Sort algorithm.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day14_SortArray {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+
+        // Bubble Sort
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - 1 - i; j++) {
+
+                if (numbers[j] > numbers[j + 1]) {
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("\nArray in Ascending Order:");
+
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Arrays
+* Bubble Sort
+* Nested loops
+* Swapping elements
+* Sorting in ascending order
+* Enhanced `for` loop
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text
+Enter the number of elements: 5
+Enter 5 elements:
+40 10 50 20 30
+
+Array in Ascending Order:
+10 20 30 40 50
+```
+
+## Learning Summary
+
+Today, I learned how to sort an array in ascending order using the Bubble Sort algorithm. I understood how adjacent elements are compared and swapped repeatedly until the array is sorted.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 14 Completed** ✅
+
+
 
 
 
