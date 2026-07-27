@@ -1025,6 +1025,98 @@ Today, I learned how to sort an array in ascending order using the Bubble Sort a
 **365 Days of Java Challenge** 🚀
 **Day 14 Completed** ✅
 
+# Day 15 - Binary Search
+
+## Program
+
+**Search for an Element Using Binary Search**
+
+### Objective
+
+Learn how to search for an element efficiently in a sorted array using the Binary Search algorithm.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day15_BinarySearch {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " sorted elements:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter the element to search: ");
+        int target = sc.nextInt();
+
+        int left = 0;
+        int right = n - 1;
+        int index = -1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (numbers[mid] == target) {
+                index = mid;
+                break;
+            } else if (numbers[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        if (index != -1) {
+            System.out.println("Element found at index: " + index);
+        } else {
+            System.out.println("Element not found");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Binary Search
+* Sorted arrays
+* `while` loop
+* Finding the middle element
+* Searching in the left and right halves
+* Time complexity: **O(log n)**
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text
+Enter the number of elements: 5
+Enter 5 sorted elements:
+10 20 30 40 50
+Enter the element to search: 40
+
+Element found at index: 3
+```
+
+## Learning Summary
+
+Today, I learned how to implement Binary Search on a sorted array. Instead of checking every element one by one, Binary Search repeatedly divides the search range into half, making it more efficient than Linear Search for sorted data.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 15 Completed** ✅
+
+
 
 
 
