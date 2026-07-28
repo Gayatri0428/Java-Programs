@@ -1117,6 +1117,75 @@ Today, I learned how to implement Binary Search on a sorted array. Instead of ch
 **Day 15 Completed** ✅
 
 
+# Day 16 - String Basics
+
+## Program
+
+**Introduction to Strings in Java**
+
+### Objective
+
+Learn the fundamentals of strings in Java, including how to accept string input from the user and perform common string operations.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day16_StringBasics {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine();
+
+        System.out.println("\nString: " + text);
+        System.out.println("Length: " + text.length());
+        System.out.println("Uppercase: " + text.toUpperCase());
+        System.out.println("Lowercase: " + text.toLowerCase());
+        System.out.println("First Character: " + text.charAt(0));
+        System.out.println("Last Character: " + text.charAt(text.length() - 1));
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String declaration
+* User input using `Scanner`
+* `length()` method
+* `toUpperCase()` method
+* `toLowerCase()` method
+* `charAt()` method
+* Accessing the first and last characters of a string
+
+## Sample Output
+
+```text
+Enter a string: Java Programming
+
+String: Java Programming
+Length: 16
+Uppercase: JAVA PROGRAMMING
+Lowercase: java programming
+First Character: J
+Last Character: g
+```
+
+## Learning Summary
+
+Today, I learned the basics of working with strings in Java. I practiced taking string input from the user and explored commonly used string methods such as `length()`, `toUpperCase()`, `toLowerCase()`, and `charAt()`. These methods are essential for performing string manipulation and solving text-based programming problems.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 16 Completed** ✅
+
+
+
 
 
 
