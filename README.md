@@ -1184,6 +1184,69 @@ Today, I learned the basics of working with strings in Java. I practiced taking 
 **365 Days of Java Challenge** 🚀
 **Day 16 Completed** ✅
 
+# Day 17 - Reverse a String
+
+## Program
+
+**Reverse a String Using a Loop**
+
+### Objective
+
+Learn how to reverse a string by traversing it from the last character to the first using a `for` loop.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day17_ReverseString {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine();
+
+        String reverse = "";
+
+        for (int i = text.length() - 1; i >= 0; i--) {
+            reverse += text.charAt(i);
+        }
+
+        System.out.println("Reversed String: " + reverse);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String input using `Scanner`
+* `length()` method
+* `charAt()` method
+* `for` loop
+* String concatenation
+* Reversing a string character by character
+
+## Sample Output
+
+```text
+Enter a string: Java Programming
+
+Reversed String: gnimmargorP avaJ
+```
+
+## Learning Summary
+
+Today, I learned how to reverse a string in Java using a `for` loop. I traversed the string from the last character to the first and built a new reversed string using the `charAt()` method and string concatenation. This is a fundamental string manipulation technique and a common programming interview question.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 17 Completed** ✅
+
+
 
 
 
