@@ -1245,6 +1245,81 @@ Today, I learned how to reverse a string in Java using a `for` loop. I traversed
 
 **365 Days of Java Challenge** 🚀
 **Day 17 Completed** ✅
+# Day 18 - Palindrome String
+
+## Program
+
+**Check Whether a String Is a Palindrome**
+
+### Objective
+
+Learn how to determine whether a string is a palindrome by reversing the string and comparing it with the original string.
+
+### Code
+
+```java id="x8d7mk"
+import java.util.Scanner;
+
+public class Day18_PalindromeString {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine();
+
+        String original = text.toLowerCase();
+        String reverse = "";
+
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reverse += original.charAt(i);
+        }
+
+        if (original.equals(reverse)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String input using `Scanner`
+* `toLowerCase()` method
+* `length()` method
+* `charAt()` method
+* `equals()` method
+* String concatenation
+* `for` loop
+* Palindrome checking
+
+## Sample Output
+
+```text id="gwd2wj"
+Enter a string: madam
+
+The string is a palindrome.
+```
+
+```text id="0l4vju"
+Enter a string: Java
+
+The string is not a palindrome.
+```
+
+## Learning Summary
+
+Today, I learned how to check whether a string is a palindrome in Java. I reversed the input string using a `for` loop and compared it with the original string using the `equals()` method. I also used `toLowerCase()` to make the comparison case-insensitive.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 18 Completed** ✅
+
 
 
 
