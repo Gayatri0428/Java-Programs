@@ -208,7 +208,7 @@ Learn how to take dynamic input from the user using the `Scanner` class in Java.
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day04_UserInput {
     public static void main(String[] args) {
@@ -280,7 +280,7 @@ Learn how to use conditional statements to make decisions in a Java program base
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day05_ConditionalStatements {
     public static void main(String[] args) {
@@ -347,7 +347,7 @@ Learn how to execute a block of code repeatedly using different types of loops i
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day06_Loops {
     public static void main(String[] args) {
@@ -430,7 +430,7 @@ Learn how to use nested `for` loops to print patterns in Java.
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day07_PatternPrinting {
     public static void main(String[] args) {
@@ -494,7 +494,7 @@ Learn how to create an array, store multiple values, accept elements dynamically
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day08_Arrays {
     public static void main(String[] args) {
@@ -567,7 +567,7 @@ Learn how to calculate the sum and average of elements in an array using a loop.
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day09_ArraySumAndAverage {
     public static void main(String[] args) {
@@ -641,7 +641,7 @@ Learn how to find the maximum and minimum values in an array using a loop and co
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day10_LargestSmallest {
     public static void main(String[] args) {
@@ -723,7 +723,7 @@ Learn how to search for a specific element in an array by checking each element 
 ### Code
 
 ```java id="1y43j6"
-import java.util.Scanner;
+import java.util.*;
 
 public class Day11_SearchElement {
     public static void main(String[] args) {
@@ -806,7 +806,7 @@ Learn how to traverse an array in reverse order and display its elements from th
 ### Code
 
 ```java id="b7ud3j"
-import java.util.Scanner;
+import java.util.*;
 
 public class Day12_ReverseArray {
     public static void main(String[] args) {
@@ -955,7 +955,7 @@ Learn how to sort array elements in ascending order using the Bubble Sort algori
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day14_SortArray {
     public static void main(String[] args) {
@@ -1038,7 +1038,7 @@ Learn how to search for an element efficiently in a sorted array using the Binar
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day15_BinarySearch {
     public static void main(String[] args) {
@@ -1130,7 +1130,7 @@ Learn the fundamentals of strings in Java, including how to accept string input 
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day16_StringBasics {
     public static void main(String[] args) {
@@ -1197,7 +1197,7 @@ Learn how to reverse a string by traversing it from the last character to the fi
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day17_ReverseString {
     public static void main(String[] args) {
@@ -1258,7 +1258,7 @@ Learn how to determine whether a string is a palindrome by reversing the string 
 ### Code
 
 ```java id="x8d7mk"
-import java.util.Scanner;
+import java.util.*;
 
 public class Day18_PalindromeString {
     public static void main(String[] args) {
@@ -1319,6 +1319,82 @@ Today, I learned how to check whether a string is a palindrome in Java. I revers
 
 **365 Days of Java Challenge** 🚀
 **Day 18 Completed** ✅
+
+# Day 19 - Count Vowels and Consonants
+
+## Program
+
+**Count the Number of Vowels and Consonants in a String**
+
+### Objective
+
+Learn how to count the number of vowels and consonants in a string by traversing each character and checking whether it is a vowel, consonant, or a non-alphabetic character.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day19_CountVowelsConsonants {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine().toLowerCase();
+
+        int vowels = 0;
+        int consonants = 0;
+
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+
+            if (Character.isLetter(ch)) {
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                    vowels++;
+                } else {
+                    consonants++;
+                }
+            }
+        }
+
+        System.out.println("Number of Vowels: " + vowels);
+        System.out.println("Number of Consonants: " + consonants);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String input using `Scanner`
+* `toLowerCase()` method
+* `charAt()` method
+* `Character.isLetter()` method
+* `for` loop
+* Nested `if-else` statements
+* Counting vowels
+* Counting consonants
+
+## Sample Output
+
+```text
+Enter a string: Java Programming
+
+Number of Vowels: 5
+Number of Consonants: 10
+```
+
+## Learning Summary
+
+Today, I learned how to count vowels and consonants in a string in Java. I used a `for` loop to traverse each character, `Character.isLetter()` to ignore spaces and special characters, and conditional statements to classify each alphabet as either a vowel or a consonant.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 19 Completed** ✅
+
 
 
 
