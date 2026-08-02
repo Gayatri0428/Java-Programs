@@ -1395,6 +1395,95 @@ Today, I learned how to count vowels and consonants in a string in Java. I used 
 **365 Days of Java Challenge** 🚀
 **Day 19 Completed** ✅
 
+# Day 20 - String Comparison and Common String Methods
+
+## Program
+
+**Compare Strings and Explore Common String Methods in Java**
+
+### Objective
+
+Learn how to compare two strings and use frequently used String methods to manipulate and analyze text.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day20_StringComparison {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first string: ");
+        String str1 = sc.nextLine();
+
+        System.out.print("Enter second string: ");
+        String str2 = sc.nextLine();
+
+        // String Comparison
+        System.out.println("\n=== String Comparison ===");
+        System.out.println("equals(): " + str1.equals(str2));
+        System.out.println("equalsIgnoreCase(): " + str1.equalsIgnoreCase(str2));
+        System.out.println("compareTo(): " + str1.compareTo(str2));
+
+        // Common String Methods
+        System.out.println("\n=== Common String Methods ===");
+        System.out.println("Length: " + str1.length());
+        System.out.println("Uppercase: " + str1.toUpperCase());
+        System.out.println("Lowercase: " + str1.toLowerCase());
+        System.out.println("Contains \"Java\": " + str1.contains("Java"));
+        System.out.println("Starts with \"J\": " + str1.startsWith("J"));
+        System.out.println("Ends with \"a\": " + str1.endsWith("a"));
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String comparison using `equals()`
+* Case-insensitive comparison using `equalsIgnoreCase()`
+* Lexicographical comparison using `compareTo()`
+* `length()` method
+* `toUpperCase()` method
+* `toLowerCase()` method
+* `contains()` method
+* `startsWith()` method
+* `endsWith()` method
+* User input using `Scanner`
+
+## Sample Output
+
+```text
+Enter first string: Java
+Enter second string: java
+
+=== String Comparison ===
+equals(): false
+equalsIgnoreCase(): true
+compareTo(): -32
+
+=== Common String Methods ===
+Length: 4
+Uppercase: JAVA
+Lowercase: java
+Contains "Java": true
+Starts with "J": true
+Ends with "a": true
+```
+
+## Learning Summary
+
+Today, I learned how to compare strings in Java using `equals()`, `equalsIgnoreCase()`, and `compareTo()`. I also explored several commonly used String methods such as `length()`, `toUpperCase()`, `toLowerCase()`, `contains()`, `startsWith()`, and `endsWith()`. These methods are essential for string manipulation and are frequently used in Java applications.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 20 Completed** ✅
+
+
 
 
 
