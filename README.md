@@ -1408,7 +1408,7 @@ Learn how to compare two strings and use frequently used String methods to manip
 ### Code
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
 public class Day20_StringComparison {
     public static void main(String[] args) {
