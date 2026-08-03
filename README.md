@@ -1483,6 +1483,69 @@ Today, I learned how to compare strings in Java using `equals()`, `equalsIgnoreC
 **365 Days of Java Challenge** 🚀
 **Day 20 Completed** ✅
 
+# Day 21 - Count Words in a Sentence
+
+## Program
+
+**Count the Number of Words in a Sentence**
+
+### Objective
+
+Learn how to count the number of words in a sentence by splitting the input string based on whitespace.
+
+### Code
+
+```java
+import java.util.*;
+
+public class Day21_CountWords {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String sentence = sc.nextLine().trim();
+
+        if (sentence.isEmpty()) {
+            System.out.println("Number of Words: 0");
+        } else {
+            String[] words = sentence.split("\\s+");
+            System.out.println("Number of Words: " + words.length);
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String input using `Scanner`
+* `trim()` method
+* `isEmpty()` method
+* `split()` method
+* Regular expression `\\s+`
+* Arrays
+* Counting words in a sentence
+
+## Sample Output
+
+```text
+Enter a sentence: Java is a powerful programming language
+
+Number of Words: 6
+```
+
+## Learning Summary
+
+Today, I learned how to count the number of words in a sentence in Java. I used the `trim()` method to remove leading and trailing spaces, `split("\\s+")` to divide the sentence into words using one or more whitespace characters, and then counted the words using the length of the resulting array.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 21 Completed** ✅
+
+
 
 
 
