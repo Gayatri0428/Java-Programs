@@ -1545,6 +1545,64 @@ Today, I learned how to count the number of words in a sentence in Java. I used 
 **365 Days of Java Challenge** 🚀
 **Day 21 Completed** ✅
 
+# Day 22 - Remove Spaces from a String
+
+## Program
+
+**Remove Spaces from a String**
+
+### Objective
+
+Learn how to remove all spaces from a string using the `replace()` method in Java.
+
+### Code
+
+```java
+import java.util.*;
+
+public class Day22_RemoveSpaces {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine();
+
+        String result = text.replace(" ", "");
+
+        System.out.println("String after removing spaces: " + result);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String input using `Scanner`
+* `replace()` method
+* String manipulation
+* Removing whitespace
+* User input handling
+
+## Sample Output
+
+```text
+Enter a string: Java Programming Language
+
+String after removing spaces: JavaProgrammingLanguage
+```
+
+## Learning Summary
+
+Today, I learned how to remove spaces from a string in Java using the `replace()` method. This technique is useful for formatting text, cleaning user input, and preparing strings for further processing.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 22 Completed** ✅
+
+
 
 
 
