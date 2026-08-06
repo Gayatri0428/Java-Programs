@@ -1684,6 +1684,92 @@ Today, I learned how to find duplicate characters in a string using nested loops
 **365 Days of Java Challenge** 🚀
 **Day 23 Completed** ✅
 
+# Day 24 - Check Anagram Strings
+
+## Program
+
+**Check Whether Two Strings Are Anagrams**
+
+### Objective
+
+Learn how to determine whether two strings are anagrams by removing spaces, converting them to lowercase, sorting their characters, and comparing the sorted arrays.
+
+### Code
+
+```java
+import java.util.*;
+
+public class Day24_AnagramCheck {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first string: ");
+        String str1 = sc.nextLine().replaceAll("\\s+", "").toLowerCase();
+
+        System.out.print("Enter second string: ");
+        String str2 = sc.nextLine().replaceAll("\\s+", "").toLowerCase();
+
+        if (str1.length() != str2.length()) {
+            System.out.println("The strings are not anagrams.");
+        } else {
+
+            char[] arr1 = str1.toCharArray();
+            char[] arr2 = str2.toCharArray();
+
+            Arrays.sort(arr1);
+            Arrays.sort(arr2);
+
+            if (Arrays.equals(arr1, arr2)) {
+                System.out.println("The strings are anagrams.");
+            } else {
+                System.out.println("The strings are not anagrams.");
+            }
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String input using `Scanner`
+* `replaceAll()` method
+* `toLowerCase()` method
+* `toCharArray()` method
+* Character arrays
+* `Arrays.sort()`
+* `Arrays.equals()`
+* Conditional statements
+* Anagram checking
+
+## Sample Output
+
+```text
+Enter first string: listen
+Enter second string: silent
+
+The strings are anagrams.
+```
+
+```text
+Enter first string: java
+Enter second string: python
+
+The strings are not anagrams.
+```
+
+## Learning Summary
+
+Today, I learned how to check whether two strings are anagrams in Java. I removed spaces, converted both strings to lowercase, sorted their characters using `Arrays.sort()`, and compared the sorted arrays using `Arrays.equals()`. This approach is simple, efficient, and commonly used in string-based programming problems.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 24 Completed** ✅
+
+
 
 
 
