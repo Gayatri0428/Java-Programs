@@ -1769,6 +1769,90 @@ Today, I learned how to check whether two strings are anagrams in Java. I remove
 **365 Days of Java Challenge** 🚀
 **Day 24 Completed** ✅
 
+# Day 25 - StringBuilder and StringBuffer
+
+## Program
+
+**Working with StringBuilder and StringBuffer in Java**
+
+### Objective
+
+Learn how to use `StringBuilder` and `StringBuffer` for modifying strings efficiently. Unlike `String`, both are mutable, which means their contents can be changed without creating a new object for every modification.
+
+### Code
+
+```java
+import java.util.*;
+
+public class Day25_StringBuilderBuffer {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine();
+
+        // StringBuilder
+        StringBuilder builder = new StringBuilder(text);
+
+        builder.append(" Java");
+        builder.insert(0, "Hello ");
+        builder.reverse();
+
+        System.out.println("\nStringBuilder Result: " + builder);
+
+        // StringBuffer
+        StringBuffer buffer = new StringBuffer(text);
+
+        buffer.append(" Programming");
+
+        System.out.println("StringBuffer Result: " + buffer);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `StringBuilder`
+* `StringBuffer`
+* Mutable strings
+* `append()` method
+* `insert()` method
+* `reverse()` method
+* Dynamic input using `Scanner`
+* Difference between `StringBuilder` and `StringBuffer`
+
+## Sample Output
+
+```text
+Enter a string: World
+
+StringBuilder Result: avaJ dlroW olleH
+StringBuffer Result: World Programming
+```
+
+## StringBuilder vs StringBuffer
+
+| Feature         | StringBuilder            | StringBuffer                |
+| --------------- | ------------------------ | --------------------------- |
+| Mutable         | Yes                      | Yes                         |
+| Thread-safe     | No                       | Yes                         |
+| Performance     | Faster                   | Slightly slower             |
+| Synchronization | Not synchronized         | Synchronized                |
+| Common Use      | Single-threaded programs | Multi-threaded environments |
+
+## Learning Summary
+
+Today, I learned about `StringBuilder` and `StringBuffer`, which are mutable alternatives to `String`. I practiced modifying strings using `append()`, `insert()`, and `reverse()`. I also learned that `StringBuilder` is generally faster, while `StringBuffer` provides thread safety through synchronization.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 25 Completed** ✅
+
+
 
 
 
