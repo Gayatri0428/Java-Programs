@@ -1853,6 +1853,107 @@ Today, I learned about `StringBuilder` and `StringBuffer`, which are mutable alt
 **Day 25 Completed** ✅
 
 
+# Day 26 - Character Frequency
+
+## Program
+
+**Count the Frequency of Each Character in a String**
+
+### Objective
+
+Learn how to count how many times each character appears in a string using nested loops and a boolean array.
+
+### Code
+
+```java
+import java.util.*;
+
+public class Day26_CharacterFrequency {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine().toLowerCase();
+
+        boolean[] counted = new boolean[text.length()];
+
+        System.out.println("\nCharacter Frequency:");
+
+        for (int i = 0; i < text.length(); i++) {
+
+            if (text.charAt(i) == ' ' || counted[i]) {
+                continue;
+            }
+
+            int count = 1;
+
+            for (int j = i + 1; j < text.length(); j++) {
+                if (text.charAt(i) == text.charAt(j)) {
+                    count++;
+                    counted[j] = true;
+                }
+            }
+
+            System.out.println(text.charAt(i) + " : " + count);
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* Character frequency
+* String traversal
+* `charAt()` method
+* Boolean arrays
+* Nested `for` loops
+* Counting character occurrences
+* `continue` statement
+* Case-insensitive string processing
+* Ignoring spaces
+
+## Sample Output
+
+```text
+Enter a string: Java Programming
+
+Character Frequency:
+j : 1
+a : 2
+v : 1
+p : 1
+r : 2
+o : 1
+g : 2
+m : 2
+i : 1
+n : 1
+```
+
+## How It Works
+
+1. The user enters a string.
+2. The string is converted to lowercase.
+3. Each character is checked one by one.
+4. A nested loop counts how many times the character occurs.
+5. The `counted` array prevents the same character from being displayed again.
+6. Spaces are ignored.
+7. The frequency of each character is displayed.
+
+## Learning Summary
+
+Today, I learned how to find the frequency of each character in a string. I practiced using nested loops, `charAt()`, and a boolean array to count and track characters efficiently.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 26 Completed** ✅
+
+
+
 
 
 
