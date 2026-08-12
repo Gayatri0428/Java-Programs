@@ -1952,6 +1952,84 @@ Today, I learned how to find the frequency of each character in a string. I prac
 **365 Days of Java Challenge** 🚀
 **Day 26 Completed** ✅
 
+# Day 27 - Remove Duplicate Characters
+
+## Program
+
+**Remove Duplicate Characters from a String**
+
+### Objective
+
+Learn how to remove duplicate characters from a string while keeping the first occurrence of each character.
+
+### Code
+
+```java id="b4nq8w"
+import java.util.*;
+
+public class Day27_RemoveDuplicateCharacters {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine();
+
+        String result = "";
+
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+
+            if (result.indexOf(ch) == -1) {
+                result += ch;
+            }
+        }
+
+        System.out.println("String after removing duplicates: " + result);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String traversal
+* `charAt()` method
+* `indexOf()` method
+* String concatenation
+* `for` loop
+* Duplicate character detection
+* Removing duplicate characters
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text id="i5ev7u"
+Enter a string: programming
+
+String after removing duplicates: progamin
+```
+
+## How It Works
+
+1. The user enters a string.
+2. The program checks each character one by one.
+3. `indexOf(ch)` checks whether the character already exists in the result.
+4. If the character is not present, it is added to the result.
+5. If it already exists, it is skipped.
+6. The final string contains only the first occurrence of each character.
+
+## Learning Summary
+
+Today, I learned how to remove duplicate characters from a string while preserving their original order. I practiced using `charAt()`, `indexOf()`, loops, and string concatenation.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 27 Completed** ✅
+
+
 
 
 
