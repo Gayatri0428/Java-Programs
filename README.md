@@ -2029,6 +2029,85 @@ Today, I learned how to remove duplicate characters from a string while preservi
 **365 Days of Java Challenge** 🚀
 **Day 27 Completed** ✅
 
+# Day 28 - Reverse Words in a Sentence
+
+## Program
+
+**Reverse the Order of Words in a Sentence**
+
+### Objective
+
+Learn how to reverse the order of words in a sentence using the `split()` method and reverse traversal of an array.
+
+### Code
+
+```java
+import java.util.*;
+
+public class Day28_ReverseWords {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String sentence = sc.nextLine().trim();
+
+        if (sentence.isEmpty()) {
+            System.out.println("No words entered.");
+        } else {
+            String[] words = sentence.split("\\s+");
+
+            System.out.println("Sentence with words reversed:");
+
+            for (int i = words.length - 1; i >= 0; i--) {
+                System.out.print(words[i] + " ");
+            }
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String input using `Scanner`
+* `trim()` method
+* `split()` method
+* Arrays
+* `for` loop
+* Reverse traversal
+* String manipulation
+* Handling multiple spaces
+
+## Sample Output
+
+```text
+Enter a sentence: Java is easy to learn
+
+Sentence with words reversed:
+learn to easy is Java
+```
+
+## How It Works
+
+1. The user enters a sentence.
+2. `trim()` removes spaces from the beginning and end.
+3. `split("\\s+")` separates the sentence into individual words.
+4. The words are stored in a String array.
+5. The `for` loop starts from the last word.
+6. Each word is printed until the first word is reached.
+
+## Learning Summary
+
+Today, I learned how to reverse the order of words in a sentence. I practiced using `split()` to convert a sentence into an array of words and then used reverse traversal to print the words from the last to the first.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 28 Completed** ✅
+
+
 
 
 
