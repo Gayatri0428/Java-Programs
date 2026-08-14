@@ -2107,6 +2107,109 @@ Today, I learned how to reverse the order of words in a sentence. I practiced us
 **365 Days of Java Challenge** 🚀
 **Day 28 Completed** ✅
 
+# Day 29 - Word Frequency
+
+## Program
+
+**Count the Frequency of Each Word in a Sentence**
+
+### Objective
+
+Learn how to count how many times each word appears in a sentence using string methods, arrays, loops, and a boolean array.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day29_WordFrequency {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String sentence = sc.nextLine().toLowerCase().trim();
+
+        if (sentence.isEmpty()) {
+            System.out.println("No words entered.");
+            sc.close();
+            return;
+        }
+
+        String[] words = sentence.split("\\s+");
+        boolean[] counted = new boolean[words.length];
+
+        System.out.println("\nWord Frequency:");
+
+        for (int i = 0; i < words.length; i++) {
+
+            if (counted[i]) {
+                continue;
+            }
+
+            int count = 1;
+
+            for (int j = i + 1; j < words.length; j++) {
+                if (words[i].equals(words[j])) {
+                    count++;
+                    counted[j] = true;
+                }
+            }
+
+            System.out.println(words[i] + " : " + count);
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* String input using `Scanner`
+* `trim()` method
+* `toLowerCase()` method
+* `split("\\s+")` method
+* String arrays
+* `equals()` method
+* Nested `for` loops
+* Boolean arrays
+* Counting word occurrences
+* `continue` statement
+
+## Sample Output
+
+```text
+Enter a sentence: Java is easy and Java is powerful
+
+Word Frequency:
+java : 2
+is : 2
+easy : 1
+and : 1
+powerful : 1
+```
+
+## How It Works
+
+1. The user enters a sentence.
+2. The sentence is converted to lowercase.
+3. `split("\\s+")` separates the sentence into individual words.
+4. The words are stored in a String array.
+5. A boolean array keeps track of words that have already been counted.
+6. Nested loops compare each word with the remaining words.
+7. The frequency of each unique word is displayed.
+
+## Learning Summary
+
+Today, I learned how to count the frequency of each word in a sentence. I practiced using String methods, arrays, nested loops, and boolean arrays to identify and count repeated words.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 29 Completed** ✅
+
+
 
 
 
