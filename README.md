@@ -2209,6 +2209,109 @@ Today, I learned how to count the frequency of each word in a sentence. I practi
 **365 Days of Java Challenge** 🚀
 **Day 29 Completed** ✅
 
+# Day 30 - ArrayList Basics
+
+## Program
+
+**Introduction to ArrayList in Java**
+
+### Objective
+
+Learn how to create and use an `ArrayList` in Java. Unlike a normal array, an `ArrayList` can dynamically grow or shrink as elements are added or removed.
+
+### Code
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day30_ArrayListBasics {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<String> names = new ArrayList<>();
+
+        System.out.print("Enter the number of names: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("Enter " + n + " names:");
+
+        for (int i = 0; i < n; i++) {
+            names.add(sc.nextLine());
+        }
+
+        System.out.println("\nNames in the ArrayList:");
+
+        for (String name : names) {
+            System.out.println(name);
+        }
+
+        System.out.println("\nTotal Names: " + names.size());
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `ArrayList`
+* Creating an `ArrayList`
+* `add()` method
+* `size()` method
+* Enhanced `for` loop
+* Dynamic collection size
+* Taking dynamic input using `Scanner`
+
+## Sample Output
+
+```text
+Enter the number of names: 4
+Enter 4 names:
+Gayatri
+Sagar
+Anu
+Rahul
+
+Names in the ArrayList:
+Gayatri
+Sagar
+Anu
+Rahul
+
+Total Names: 4
+```
+
+## Array vs ArrayList
+
+| Array                              | ArrayList                           |
+| ---------------------------------- | ----------------------------------- |
+| Fixed size                         | Dynamic size                        |
+| Can store primitive types directly | Uses wrapper classes for primitives |
+| Uses `length`                      | Uses `size()`                       |
+| Less flexible                      | More flexible                       |
+| Example: `int[] numbers`           | Example: `ArrayList<Integer>`       |
+
+## How It Works
+
+1. Create an `ArrayList` using `ArrayList<String>`.
+2. Take the number of names from the user.
+3. Use `add()` to insert each name.
+4. Use an enhanced `for` loop to display the names.
+5. Use `size()` to find the total number of elements.
+
+## Learning Summary
+
+Today, I learned the basics of `ArrayList` in Java. I learned how to create a dynamic list, add elements using `add()`, retrieve the number of elements using `size()`, and traverse the list using an enhanced `for` loop.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 30 Completed** ✅
+
+
 
 
 
