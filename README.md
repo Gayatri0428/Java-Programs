@@ -2310,6 +2310,156 @@ Today, I learned the basics of `ArrayList` in Java. I learned how to create a dy
 
 **365 Days of Java Challenge** 🚀
 **Day 30 Completed** ✅
+# Day 31 - ArrayList Operations
+
+## Program
+
+**Perform Basic Operations on an ArrayList**
+
+### Objective
+
+Learn how to perform common operations on an `ArrayList`, including adding, accessing, updating, searching, and removing elements.
+
+### Code
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day31_ArrayListOperations {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<String> names = new ArrayList<>();
+
+        System.out.print("Enter number of names: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        // Add elements
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter name " + (i + 1) + ": ");
+            names.add(sc.nextLine());
+        }
+
+        System.out.println("\nOriginal ArrayList:");
+        System.out.println(names);
+
+        // Access an element
+        System.out.println("\nFirst name: " + names.get(0));
+
+        // Update an element
+        System.out.print("\nEnter index to update: ");
+        int index = sc.nextInt();
+        sc.nextLine();
+
+        if (index >= 0 && index < names.size()) {
+            System.out.print("Enter new name: ");
+            String newName = sc.nextLine();
+
+            names.set(index, newName);
+        } else {
+            System.out.println("Invalid index.");
+        }
+
+        // Search for a name
+        System.out.print("\nEnter name to search: ");
+        String searchName = sc.nextLine();
+
+        if (names.contains(searchName)) {
+            System.out.println(searchName + " is present.");
+        } else {
+            System.out.println(searchName + " is not present.");
+        }
+
+        // Remove an element
+        System.out.print("\nEnter index to remove: ");
+        int removeIndex = sc.nextInt();
+
+        if (removeIndex >= 0 && removeIndex < names.size()) {
+            names.remove(removeIndex);
+        } else {
+            System.out.println("Invalid index.");
+        }
+
+        System.out.println("\nFinal ArrayList:");
+        System.out.println(names);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `ArrayList`
+* `add()` method
+* `get()` method
+* `set()` method
+* `remove()` method
+* `contains()` method
+* `size()` method
+* Index-based operations
+* Enhanced understanding of dynamic collections
+* User input using `Scanner`
+
+## Sample Output
+
+```text
+Enter number of names: 4
+Enter name 1: Gayatri
+Enter name 2: Anu
+Enter name 3: Rahul
+Enter name 4: Priya
+
+Original ArrayList:
+[Gayatri, Anu, Rahul, Priya]
+
+First name: Gayatri
+
+Enter index to update: 1
+Enter new name: Sita
+
+Enter name to search: Rahul
+Rahul is present.
+
+Enter index to remove: 2
+
+Final ArrayList:
+[Gayatri, Sita, Priya]
+```
+
+## ArrayList Methods
+
+| Method       | Purpose                          |
+| ------------ | -------------------------------- |
+| `add()`      | Adds an element                  |
+| `get()`      | Accesses an element              |
+| `set()`      | Updates an element               |
+| `remove()`   | Removes an element               |
+| `contains()` | Checks whether an element exists |
+| `size()`     | Returns the number of elements   |
+
+## How It Works
+
+1. Create an `ArrayList` to store names.
+2. Take the number of names from the user.
+3. Add names using `add()`.
+4. Access the first name using `get()`.
+5. Update a name using `set()`.
+6. Search for a name using `contains()`.
+7. Remove a name using `remove()`.
+8. Display the final `ArrayList`.
+
+## Learning Summary
+
+Today, I learned how to perform basic operations on an `ArrayList`. I practiced adding, accessing, updating, searching, and removing elements. These operations are fundamental for working with collections in Java.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 31 Completed** ✅
 
 
 
