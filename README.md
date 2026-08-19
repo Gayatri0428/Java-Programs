@@ -2460,32 +2460,105 @@ Today, I learned how to perform basic operations on an `ArrayList`. I practiced 
 
 **365 Days of Java Challenge** 🚀
 **Day 31 Completed** ✅
+# Day 32 - Maximum and Minimum in ArrayList
 
+## Program
 
+**Find the Maximum and Minimum Elements in an ArrayList**
 
+### Objective
 
+Learn how to work with `ArrayList<Integer>` and find the largest and smallest elements using loops and conditional statements.
 
+### Code
 
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class Day32_MaxMinArrayList {
+    public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
 
+        ArrayList<Integer> numbers = new ArrayList<>();
 
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
 
+        System.out.println("Enter " + n + " numbers:");
 
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
 
+        int max = numbers.get(0);
+        int min = numbers.get(0);
 
+        for (int number : numbers) {
 
+            if (number > max) {
+                max = number;
+            }
 
+            if (number < min) {
+                min = number;
+            }
+        }
 
+        System.out.println("\nArrayList: " + numbers);
+        System.out.println("Maximum: " + max);
+        System.out.println("Minimum: " + min);
 
+        sc.close();
+    }
+}
+```
 
+## Concepts Covered
 
+* `ArrayList<Integer>`
+* `add()` method
+* `get()` method
+* Enhanced `for` loop
+* Finding maximum value
+* Finding minimum value
+* Conditional statements
+* Comparing elements
+* Dynamic input using `Scanner`
 
+## Sample Output
 
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+25
+10
+45
+5
+30
 
+ArrayList: [25, 10, 45, 5, 30]
+Maximum: 45
+Minimum: 5
+```
 
+## How It Works
 
+1. Create an `ArrayList<Integer>` to store numbers.
+2. Take the number of elements from the user.
+3. Add each number to the `ArrayList`.
+4. Initially consider the first element as both maximum and minimum.
+5. Traverse the list using an enhanced `for` loop.
+6. If an element is greater than `max`, update `max`.
+7. If an element is smaller than `min`, update `min`.
+8. Display the maximum and minimum values.
 
+## Learning Summary
 
+Today, I learned how to find the maximum and minimum values in an `ArrayList`. I practiced using `ArrayList<Integer>`, the enhanced `for` loop, `get()`, and conditional statements to compare elements.
 
+---
 
+**365 Days of Java Challenge** 🚀
+**Day 32 Completed** ✅
