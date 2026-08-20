@@ -2562,3 +2562,89 @@ Today, I learned how to find the maximum and minimum values in an `ArrayList`. I
 
 **365 Days of Java Challenge** 🚀
 **Day 32 Completed** ✅
+# Day 33 - Sort an ArrayList
+
+## Program
+
+**Sort an ArrayList in Ascending Order**
+
+### Objective
+
+Learn how to sort the elements of an `ArrayList` in ascending order using the `Collections.sort()` method.
+
+### Code
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Day33_SortArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("\nOriginal ArrayList: " + numbers);
+
+        Collections.sort(numbers);
+
+        System.out.println("Sorted ArrayList: " + numbers);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `ArrayList<Integer>`
+* `Collections.sort()`
+* Sorting elements
+* `add()` method
+* `Scanner`
+* Enhanced understanding of Java Collections
+
+## Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+40
+10
+30
+50
+20
+
+Original ArrayList: [40, 10, 30, 50, 20]
+Sorted ArrayList: [10, 20, 30, 40, 50]
+```
+
+## How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Take the number of elements from the user.
+3. Add each number using the `add()` method.
+4. Display the original `ArrayList`.
+5. Use `Collections.sort(numbers)` to sort the elements.
+6. Display the sorted `ArrayList`.
+
+## Learning Summary
+
+Today, I learned how to sort an `ArrayList` in ascending order using the `Collections.sort()` method. This is a useful operation when working with collections and organizing data.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 33 Completed** ✅
+
