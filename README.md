@@ -2260,7 +2260,7 @@ public class Day30_ArrayListBasics {
 * `ArrayList`
 * Creating an `ArrayList`
 * `add()` method
-* `size()` method
+* `size()` method    
 * Enhanced `for` loop
 * Dynamic collection size
 * Taking dynamic input using `Scanner`
@@ -2647,4 +2647,99 @@ Today, I learned how to sort an `ArrayList` in ascending order using the `Collec
 
 **365 Days of Java Challenge** 🚀
 **Day 33 Completed** ✅
+# Day 34 - Descending Order ArrayList
+
+## Program
+
+**Sort an ArrayList in Descending Order**
+
+### Objective
+
+Learn how to sort the elements of an `ArrayList` in descending order using `Collections.sort()` and `Collections.reverseOrder()`.
+
+### Code
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Day34_DescendingArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("\nOriginal ArrayList: " + numbers);
+
+        Collections.sort(numbers, Collections.reverseOrder());
+
+        System.out.println("Descending Order: " + numbers);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `ArrayList<Integer>`
+* `Collections.sort()`
+* `Collections.reverseOrder()`
+* Descending-order sorting
+* `add()` method
+* User input using `Scanner`
+* Java Collections
+
+## Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+20
+50
+10
+40
+30
+
+Original ArrayList: [20, 50, 10, 40, 30]
+Descending Order: [50, 40, 30, 20, 10]
+```
+
+## How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Take the number of elements from the user.
+3. Add each number to the list.
+4. Display the original list.
+5. Use `Collections.sort()` with `Collections.reverseOrder()` to sort the numbers from largest to smallest.
+6. Display the sorted list.
+
+### Important Method
+
+```java
+Collections.sort(numbers, Collections.reverseOrder());
+```
+
+* `Collections.sort()` → sorts the elements.
+* `Collections.reverseOrder()` → changes the sorting order to descending.
+
+## Learning Summary
+
+Today, I learned how to sort an `ArrayList` in descending order. I practiced using `Collections.sort()` and `Collections.reverseOrder()` to arrange numbers from the largest value to the smallest value.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 34 Completed** ✅
 
