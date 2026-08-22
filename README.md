@@ -2742,4 +2742,112 @@ Today, I learned how to sort an `ArrayList` in descending order. I practiced usi
 
 **365 Days of Java Challenge** 🚀
 **Day 34 Completed** ✅
+# Day 35 - Remove Duplicates from ArrayList
+
+## Program
+
+**Remove Duplicate Elements from an ArrayList**
+
+### Objective
+
+Learn how to remove duplicate elements from an `ArrayList` while preserving the original order of the elements.
+
+### Code
+
+```java id="7pqx2p"
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day35_RemoveDuplicatesArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("\nOriginal ArrayList: " + numbers);
+
+        ArrayList<Integer> uniqueNumbers = new ArrayList<>();
+
+        for (int number : numbers) {
+            if (!uniqueNumbers.contains(number)) {
+                uniqueNumbers.add(number);
+            }
+        }
+
+        System.out.println("ArrayList after removing duplicates: "
+                + uniqueNumbers);
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `ArrayList<Integer>`
+* `add()` method
+* `contains()` method
+* Enhanced `for` loop
+* Duplicate detection
+* Creating a unique `ArrayList`
+* Preserving original element order
+* Dynamic input using `Scanner`
+
+## Sample Output
+
+```text id="8w5g0p"
+Enter number of elements: 8
+Enter 8 numbers:
+10
+20
+10
+30
+20
+40
+30
+50
+
+Original ArrayList: [10, 20, 10, 30, 20, 40, 30, 50]
+ArrayList after removing duplicates: [10, 20, 30, 40, 50]
+```
+
+## How It Works
+
+1. Create an `ArrayList` to store the input numbers.
+2. Take the elements from the user.
+3. Create another `ArrayList` called `uniqueNumbers`.
+4. Traverse the original list using an enhanced `for` loop.
+5. Use `contains()` to check whether the number is already present.
+6. If the number is not present, add it to `uniqueNumbers`.
+7. Duplicate values are skipped.
+8. Display the final list without duplicates.
+
+### Important Code
+
+```java id="y8j5r3"
+if (!uniqueNumbers.contains(number)) {
+    uniqueNumbers.add(number);
+}
+```
+
+`contains()` checks whether an element already exists, while `add()` inserts a new unique element.
+
+## Learning Summary
+
+Today, I learned how to remove duplicate elements from an `ArrayList` without changing the original order. I practiced using `contains()`, `add()`, and the enhanced `for` loop.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 35 Completed** ✅
 
