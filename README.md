@@ -2850,4 +2850,144 @@ Today, I learned how to remove duplicate elements from an `ArrayList` without ch
 
 **365 Days of Java Challenge** 🚀
 **Day 35 Completed** ✅
+# Day 36 - Second Largest Number in ArrayList
+
+## Program
+
+**Find the Second Largest Unique Number in an ArrayList**
+
+### Objective
+
+Learn how to find the largest and second largest unique numbers in an `ArrayList` without sorting the list.
+
+### Code
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day36_SecondLargestArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        if (n < 2) {
+            System.out.println("Enter at least 2 elements.");
+            sc.close();
+            return;
+        }
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        Integer largest = null;
+        Integer secondLargest = null;
+
+        for (int number : numbers) {
+
+            if (largest == null || number > largest) {
+                if (largest != null && number != largest) {
+                    secondLargest = largest;
+                }
+                largest = number;
+            }
+            else if (number != largest &&
+                     (secondLargest == null || number > secondLargest)) {
+                secondLargest = number;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+
+        if (secondLargest == null) {
+            System.out.println("There is no second largest unique number.");
+        } else {
+            System.out.println("Largest: " + largest);
+            System.out.println("Second Largest: " + secondLargest);
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `ArrayList<Integer>`
+* Enhanced `for` loop
+* Finding the maximum value
+* Finding the second largest value
+* Handling duplicate values
+* `Integer` wrapper class
+* `null` checking
+* Conditional statements
+* Searching without sorting
+
+## Sample Output
+
+```text
+Enter number of elements: 6
+Enter 6 numbers:
+25
+50
+10
+50
+30
+40
+
+ArrayList: [25, 50, 10, 50, 30, 40]
+Largest: 50
+Second Largest: 40
+```
+
+## How It Works
+
+1. Create an `ArrayList<Integer>` to store the numbers.
+2. Take the elements from the user.
+3. Initialize `largest` and `secondLargest` as `null`.
+4. Traverse the list using an enhanced `for` loop.
+5. If a number is greater than the current largest, update the largest value.
+6. The previous largest becomes the second largest.
+7. If the number is between the largest and second largest, update `secondLargest`.
+8. Duplicate values of the largest number are ignored.
+9. Display the largest and second largest unique numbers.
+
+## Important Logic
+
+```java
+if (largest == null || number > largest) {
+    if (largest != null && number != largest) {
+        secondLargest = largest;
+    }
+    largest = number;
+}
+```
+
+This part updates the largest and second largest values whenever a larger number is found.
+
+## Time Complexity
+
+```text
+O(n)
+```
+
+The list is traversed only once, so the algorithm takes linear time.
+
+## Learning Summary
+
+Today, I learned how to find the second largest unique number in an `ArrayList` without sorting the list. I practiced comparison logic, enhanced `for` loops, duplicate handling, and `null` checking.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 36 Completed** ✅
+
 
