@@ -2989,5 +2989,133 @@ Today, I learned how to find the second largest unique number in an `ArrayList` 
 
 **365 Days of Java Challenge** 🚀
 **Day 36 Completed** ✅
+# Day 37 - Second Smallest Number in ArrayList
+
+## Program
+
+**Find the Second Smallest Unique Number in an ArrayList**
+
+### Objective
+
+Learn how to find the smallest and second smallest unique numbers in an `ArrayList` without sorting the list.
+
+### Code
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day37_SecondSmallestArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        if (n < 2) {
+            System.out.println("Enter at least 2 elements.");
+            sc.close();
+            return;
+        }
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        Integer smallest = null;
+        Integer secondSmallest = null;
+
+        for (int number : numbers) {
+
+            if (smallest == null || number < smallest) {
+
+                if (smallest != null && number != smallest) {
+                    secondSmallest = smallest;
+                }
+
+                smallest = number;
+
+            } else if (number != smallest &&
+                       (secondSmallest == null || number < secondSmallest)) {
+
+                secondSmallest = number;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+
+        if (secondSmallest == null) {
+            System.out.println("There is no second smallest unique number.");
+        } else {
+            System.out.println("Smallest: " + smallest);
+            System.out.println("Second Smallest: " + secondSmallest);
+        }
+
+        sc.close();
+    }
+}
+```
+
+## Concepts Covered
+
+* `ArrayList<Integer>`
+* Enhanced `for` loop
+* Finding the smallest value
+* Finding the second smallest value
+* Handling duplicate values
+* `Integer` wrapper class
+* `null` checking
+* Conditional statements
+* Searching without sorting
+
+## Sample Output
+
+```text
+Enter number of elements: 6
+Enter 6 numbers:
+25
+10
+40
+10
+30
+50
+
+ArrayList: [25, 10, 40, 10, 30, 50]
+Smallest: 10
+Second Smallest: 25
+```
+
+## How It Works
+
+1. Create an `ArrayList<Integer>` to store the numbers.
+2. Take the elements from the user.
+3. Initialize `smallest` and `secondSmallest` as `null`.
+4. Traverse the list using an enhanced `for` loop.
+5. If a number is smaller than the current `smallest`, update both values.
+6. If a number is greater than `smallest` but smaller than `secondSmallest`, update `secondSmallest`.
+7. Duplicate values of the smallest number are ignored.
+8. Display the smallest and second smallest unique numbers.
+
+## Time Complexity
+
+```text
+O(n)
+```
+
+The list is traversed only once, so the program has linear time complexity.
+
+## Learning Summary
+
+Today, I learned how to find the second smallest unique number in an `ArrayList` without sorting the list. I practiced comparison logic, enhanced `for` loops, duplicate handling, and `null` checking.
+
+---
+
+**365 Days of Java Challenge** 🚀
+**Day 37 Completed** ✅
 
 
