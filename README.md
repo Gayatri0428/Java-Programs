@@ -3172,5 +3172,118 @@ public class Day38_CommonElementsArrayList {
         sc.close();
     }
 }
+# Day 39 - Merge Two ArrayLists
+
+## Program
+
+**Merge Two ArrayLists into a Single ArrayList**
+
+## Objective
+
+Learn how to combine the elements of two `ArrayList`s into one `ArrayList` using the `addAll()` method.
+
+## Code
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day39_MergeArrayLists {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        ArrayList<Integer> mergedList = new ArrayList<>();
+
+        System.out.print("Enter number of elements for first list: ");
+        int n1 = sc.nextInt();
+
+        System.out.println("Enter elements for first list:");
+        for (int i = 0; i < n1; i++) {
+            list1.add(sc.nextInt());
+        }
+
+        System.out.print("Enter number of elements for second list: ");
+        int n2 = sc.nextInt();
+
+        System.out.println("Enter elements for second list:");
+        for (int i = 0; i < n2; i++) {
+            list2.add(sc.nextInt());
+        }
+
+        mergedList.addAll(list1);
+        mergedList.addAll(list2);
+
+        System.out.println("\nFirst ArrayList: " + list1);
+        System.out.println("Second ArrayList: " + list2);
+        System.out.println("Merged ArrayList: " + mergedList);
+
+        sc.close();
+    }
+}
+```
+
+## Sample Output
+
+```text
+Enter number of elements for first list: 4
+Enter elements for first list:
+10
+20
+30
+40
+
+Enter number of elements for second list: 3
+Enter elements for second list:
+50
+60
+70
+
+First ArrayList: [10, 20, 30, 40]
+Second ArrayList: [50, 60, 70]
+Merged ArrayList: [10, 20, 30, 40, 50, 60, 70]
+```
+
+## Concepts Covered
+
+* `ArrayList`
+* Multiple `ArrayList`s
+* `add()` method
+* `addAll()` method
+* Enhanced `for` loop
+* Merging collections
+* Dynamic user input using `Scanner`
+
+## How It Works
+
+1. Create two `ArrayList<Integer>` objects.
+2. Take elements for the first list from the user.
+3. Take elements for the second list.
+4. Create a third `ArrayList` called `mergedList`.
+5. Use `addAll(list1)` to add all elements of the first list.
+6. Use `addAll(list2)` to add all elements of the second list.
+7. Display the merged list.
+
+## Important Method
+
+```java
+mergedList.addAll(list1);
+mergedList.addAll(list2);
+```
+
+The `addAll()` method adds all elements from one collection to another.
+
+## Learning Summary
+
+Today, I learned how to merge two `ArrayList`s into a single list. I practiced using `addAll()` to combine collections while maintaining the original order of their elements.
+
+---
+
+**365 Days of Java Challenge** 🚀
+
+**Day 39 Completed** ✅
+
 
 
