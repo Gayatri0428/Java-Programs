@@ -3284,6 +3284,117 @@ Today, I learned how to merge two `ArrayList`s into a single list. I practiced u
 **365 Days of Java Challenge** 🚀
 
 **Day 39 Completed** ✅
+# Day 40 - Reverse an ArrayList
+
+## Program
+
+**Reverse the Elements of an ArrayList**
+
+## Objective
+
+Learn how to reverse the order of elements in an `ArrayList` using the `Collections.reverse()` method.
+
+## Code
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Day40_ReverseArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("\nOriginal ArrayList: " + numbers);
+
+        Collections.reverse(numbers);
+
+        System.out.println("Reversed ArrayList: " + numbers);
+
+        sc.close();
+    }
+}
+```
+
+## Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10
+20
+30
+40
+50
+
+Original ArrayList: [10, 20, 30, 40, 50]
+Reversed ArrayList: [50, 40, 30, 20, 10]
+```
+
+## Concepts Covered
+
+* `ArrayList<Integer>`
+* `Collections.reverse()`
+* `add()` method
+* `Scanner`
+* Collection manipulation
+* Reversing elements
+* Dynamic user input
+
+## How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Take the number of elements from the user.
+3. Add the elements to the ArrayList using `add()`.
+4. Display the original ArrayList.
+5. Use `Collections.reverse(numbers)` to reverse the elements.
+6. Display the reversed ArrayList.
+
+## Important Method
+
+```java
+Collections.reverse(numbers);
+```
+
+The `Collections.reverse()` method reverses the order of elements in the given list.
+
+### Example
+
+```text
+Before: [10, 20, 30, 40, 50]
+
+After:  [50, 40, 30, 20, 10]
+```
+
+## Time Complexity
+
+```text
+O(n)
+```
+
+The elements are reversed in linear time.
+
+## Learning Summary
+
+Today, I learned how to reverse an `ArrayList` using `Collections.reverse()`. I practiced working with Java Collections and learned how to modify the order of elements in a list.
+
+---
+
+**365 Days of Java Challenge** 🚀
+
+**Day 40 Completed** ✅
 
 
 
