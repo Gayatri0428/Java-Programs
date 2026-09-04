@@ -3396,5 +3396,128 @@ Today, I learned how to reverse an `ArrayList` using `Collections.reverse()`. I 
 
 **Day 40 Completed** ✅
 
+# Day 41 – Sum and Average of ArrayList
+
+## 📌 Objective
+
+The objective of this program is to find the **sum and average of numbers stored in an ArrayList** using Java.
+
+## 📂 File Name
+
+`Day41_SumAverageArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day41_SumAverageArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        int sum = 0;
+
+        for (int number : numbers) {
+            sum += number;
+        }
+
+        double average = (double) sum / numbers.size();
+
+        System.out.println("\nArrayList: " + numbers);
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + average);
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10
+20
+30
+40
+50
+
+ArrayList: [10, 20, 30, 40, 50]
+Sum: 150
+Average: 30.0
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* Enhanced `for` loop
+* `add()` method
+* Sum calculation
+* Average calculation
+* Type casting
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Take the number of elements from the user.
+3. Store the numbers in the ArrayList.
+4. Use a `for-each` loop to calculate the sum.
+5. Divide the sum by the number of elements to calculate the average.
+6. Display the ArrayList, sum, and average.
+
+### Important Logic
+
+```java
+sum += number;
+```
+
+Adds each number to the total sum.
+
+```java
+double average = (double) sum / numbers.size();
+```
+
+Calculates the average using floating-point division.
+
+## ⏱️ Time Complexity
+
+**O(n)** – The program visits every element once.
+
+## 💾 Space Complexity
+
+**O(n)** – The ArrayList stores `n` elements.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Store numbers using ArrayList
+* Traverse an ArrayList
+* Calculate the sum of elements
+* Calculate the average of elements
+* Work with dynamic user input
+
+## 🚀 365 Days of Java Challenge
+
+**Day 41 completed! ✅**
+
+Continuing my journey of learning Java through daily coding practice.
+
 
 
