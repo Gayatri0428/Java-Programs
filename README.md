@@ -3518,6 +3518,131 @@ Today I learned how to:
 **Day 41 completed! ✅**
 
 Continuing my journey of learning Java through daily coding practice.
+# Day 42 – Count Even and Odd Numbers in ArrayList
+
+## 📌 Objective
+
+The objective of this program is to **count the number of even and odd numbers** present in an ArrayList.
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day42_CountEvenOddArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        int evenCount = 0;
+        int oddCount = 0;
+
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+        System.out.println("Even numbers count: " + evenCount);
+        System.out.println("Odd numbers count: " + oddCount);
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 6
+Enter 6 numbers:
+10
+15
+20
+25
+30
+35
+
+ArrayList: [10, 15, 20, 25, 30, 35]
+Even numbers count: 3
+Odd numbers count: 3
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic input
+* Enhanced `for` loop
+* `if-else`
+* Modulus operator `%`
+* Counting elements
+
+## ⚙️ How It Works
+
+1. Create an ArrayList to store integers.
+2. Take the number of elements from the user.
+3. Add each number to the ArrayList.
+4. Traverse the ArrayList using a `for-each` loop.
+5. Check `number % 2 == 0`.
+6. If true, increase the even count.
+7. Otherwise, increase the odd count.
+8. Display both counts.
+
+### 🔑 Important Logic
+
+```java
+if (number % 2 == 0) {
+    evenCount++;
+} else {
+    oddCount++;
+}
+```
+
+The `%` operator gives the remainder after division by 2.
+
+* Remainder `0` → Even
+* Remainder `1` → Odd
+
+## ⏱️ Time Complexity
+
+**O(n)** – Each element is checked once.
+
+## 💾 Space Complexity
+
+**O(n)** – The ArrayList stores `n` numbers.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Store numbers in an ArrayList.
+* Traverse an ArrayList.
+* Check whether a number is even or odd.
+* Count elements based on a condition.
+* Use the modulus operator in Java.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 42 completed! ✅**
+
+Continuing my Java learning journey through daily coding practice.
+
 
 
 
