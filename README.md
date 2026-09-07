@@ -3641,7 +3641,136 @@ Today I learned how to:
 
 **Day 42 completed! ✅**
 
-Continuing my Java learning journey through daily coding practice.
+# Day 43 – Find Frequency of an Element in ArrayList
+
+## 📌 Objective
+
+The objective of this program is to find **how many times a particular element occurs in an ArrayList**.
+
+## 📂 File Name
+
+`Day43_FrequencyArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day43_FrequencyArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.print("Enter the number to find frequency: ");
+        int target = sc.nextInt();
+
+        int count = 0;
+
+        for (int number : numbers) {
+            if (number == target) {
+                count++;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+        System.out.println("Frequency of " + target + ": " + count);
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 7
+Enter 7 numbers:
+10
+20
+10
+30
+10
+40
+20
+
+Enter the number to find frequency: 10
+
+ArrayList: [10, 20, 10, 30, 10, 40, 20]
+Frequency of 10: 3
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* Enhanced `for` loop
+* `if` condition
+* Frequency counting
+* Comparison operator `==`
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Take the number of elements from the user.
+3. Store the elements in the ArrayList.
+4. Ask the user for the target number.
+5. Traverse the ArrayList using a `for-each` loop.
+6. Compare each element with the target.
+7. Increase `count` whenever a match is found.
+8. Display the frequency.
+
+### 🔑 Important Logic
+
+```java
+if (number == target) {
+    count++;
+}
+```
+
+Whenever an element is equal to the target number, the counter increases by 1.
+
+## ⏱️ Time Complexity
+
+**O(n)** – The ArrayList is traversed once.
+
+## 💾 Space Complexity
+
+**O(n)** – The ArrayList stores `n` elements.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Store elements in an ArrayList.
+* Search for a particular element.
+* Count how many times an element occurs.
+* Use a `for-each` loop.
+* Work with dynamic user input.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 43 completed! ✅**
+
+Continuing my journey of learning Java through daily coding practice.
+
+### GitHub Commit Message
+
+```text
+Day 43: Find frequency of an element in ArrayList
+```
 
 
 
