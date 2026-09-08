@@ -3764,13 +3764,128 @@ Today I learned how to:
 
 **Day 43 completed! ✅**
 
-Continuing my journey of learning Java through daily coding practice.
+# Day 44 – Find Largest Element in ArrayList
 
-### GitHub Commit Message
+## 📌 Objective
+
+The objective of this program is to find the **largest element** present in an ArrayList using Java.
+
+## 📂 File Name
+
+`Day44_LargestArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day44_LargestArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        int largest = numbers.get(0);
+
+        for (int number : numbers) {
+            if (number > largest) {
+                largest = number;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+        System.out.println("Largest element: " + largest);
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
 
 ```text
-Day 43: Find frequency of an element in ArrayList
+Enter number of elements: 5
+Enter 5 numbers:
+25
+10
+45
+30
+15
+
+ArrayList: [25, 10, 45, 30, 15]
+Largest element: 45
 ```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* `get()` method
+* Enhanced `for` loop
+* `if` condition
+* Comparison operators
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Take the number of elements from the user.
+3. Store all numbers in the ArrayList.
+4. Assume the first element is the largest.
+5. Compare every element with the current largest value.
+6. If a larger value is found, update `largest`.
+7. Display the largest element.
+
+### 🔑 Important Logic
+
+```java
+int largest = numbers.get(0);
+```
+
+The first element is initially considered the largest.
+
+```java
+if (number > largest) {
+    largest = number;
+}
+```
+
+If the current number is greater than `largest`, it becomes the new largest value.
+
+## ⏱️ Time Complexity
+
+**O(n)** – Every element is checked once.
+
+## 💾 Space Complexity
+
+**O(n)** – The ArrayList stores `n` elements.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Store numbers in an ArrayList.
+* Access an element using `get()`.
+* Traverse an ArrayList.
+* Compare elements.
+* Find the largest element.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 44 completed! ✅**
+
+
 
 
 
