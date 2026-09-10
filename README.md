@@ -3883,7 +3883,132 @@ Today I learned how to:
 
 ## 🚀 365 Days of Java Challenge
 
-**Day 44 completed! ✅**
+**Day 44 completed! ✅**\
+# Day 45 – Find Smallest Element in ArrayList
+
+## 📌 Objective
+
+The objective of this program is to find the **smallest element** present in an ArrayList using Java.
+
+## 📂 File Name
+
+`Day45_SmallestArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day45_SmallestArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        int smallest = numbers.get(0);
+
+        for (int number : numbers) {
+            if (number < smallest) {
+                smallest = number;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+        System.out.println("Smallest element: " + smallest);
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+25
+10
+45
+30
+15
+
+ArrayList: [25, 10, 45, 30, 15]
+Smallest element: 10
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* `add()` method
+* `get()` method
+* Enhanced `for` loop
+* `if` condition
+* Comparison operators
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>` to store numbers.
+2. Take the number of elements from the user.
+3. Add the numbers to the ArrayList.
+4. Assume the first element is the smallest.
+5. Compare each element with the current smallest value.
+6. If a smaller value is found, update `smallest`.
+7. Display the smallest element.
+
+### 🔑 Important Logic
+
+```java
+int smallest = numbers.get(0);
+```
+
+The first element is initially considered the smallest.
+
+```java
+if (number < smallest) {
+    smallest = number;
+}
+```
+
+If the current number is smaller than `smallest`, it becomes the new smallest value.
+
+## ⏱️ Time Complexity
+
+**O(n)** – Every element is checked once.
+
+## 💾 Space Complexity
+
+**O(n)** – The ArrayList stores `n` elements.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Store numbers in an ArrayList.
+* Access an element using `get()`.
+* Traverse an ArrayList using a `for-each` loop.
+* Compare elements.
+* Find the smallest element in an ArrayList.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 45 completed! ✅**
+
+
+```
+
 
 
 
