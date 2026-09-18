@@ -4005,6 +4005,202 @@ Today I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 45 completed! ✅**
+# Day 47 – Average of Even and Odd Numbers in ArrayList
+
+## 📌 Objective
+
+The objective of this program is to calculate the **average of even numbers and the average of odd numbers** stored in an ArrayList.
+
+## 📂 File Name
+
+`Day47_AverageEvenOddArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day47_AverageEvenOddArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        int evenSum = 0;
+        int oddSum = 0;
+        int evenCount = 0;
+        int oddCount = 0;
+
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                evenSum += number;
+                evenCount++;
+            } else {
+                oddSum += number;
+                oddCount++;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+
+        if (evenCount > 0) {
+            double evenAverage = (double) evenSum / evenCount;
+            System.out.println("Average of even numbers: " + evenAverage);
+        } else {
+            System.out.println("No even numbers found.");
+        }
+
+        if (oddCount > 0) {
+            double oddAverage = (double) oddSum / oddCount;
+            System.out.println("Average of odd numbers: " + oddAverage);
+        } else {
+            System.out.println("No odd numbers found.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 6
+Enter 6 numbers:
+10
+15
+20
+25
+30
+35
+
+ArrayList: [10, 15, 20, 25, 30, 35]
+Average of even numbers: 20.0
+Average of odd numbers: 25.0
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* Enhanced `for` loop
+* `if-else`
+* Modulus operator `%`
+* Sum calculation
+* Counting elements
+* Average calculation
+* Type casting
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>` to store numbers.
+2. Take the number of elements from the user.
+3. Add the numbers to the ArrayList.
+4. Create variables to store:
+
+   * Sum of even numbers
+   * Sum of odd numbers
+   * Count of even numbers
+   * Count of odd numbers
+5. Traverse the ArrayList using a `for-each` loop.
+6. Check whether each number is even or odd.
+7. Calculate the sum and count separately.
+8. Divide the sum by the count to find the average.
+9. Display the averages.
+
+## 🔑 Important Logic
+
+### Checking Even and Odd Numbers
+
+```java
+if (number % 2 == 0) {
+    evenSum += number;
+    evenCount++;
+} else {
+    oddSum += number;
+    oddCount++;
+}
+```
+
+The `%` operator gives the remainder after division by 2.
+
+* Remainder `0` → Even
+* Otherwise → Odd
+
+### Calculating Average
+
+```java
+double evenAverage = (double) evenSum / evenCount;
+```
+
+```java
+double oddAverage = (double) oddSum / oddCount;
+```
+
+Type casting to `double` ensures that the result can contain decimal values.
+
+## 📊 Example Calculation
+
+For:
+
+```text
+[10, 15, 20, 25, 30, 35]
+```
+
+### Even Numbers
+
+```text
+10, 20, 30
+
+Sum = 60
+Count = 3
+Average = 60 / 3 = 20.0
+```
+
+### Odd Numbers
+
+```text
+15, 25, 35
+
+Sum = 75
+Count = 3
+Average = 75 / 3 = 25.0
+```
+
+## ⏱️ Time Complexity
+
+**O(n)** – Each element is checked once.
+
+## 💾 Space Complexity
+
+**O(n)** – The ArrayList stores `n` elements.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Store numbers in an ArrayList.
+* Separate even and odd numbers.
+* Calculate sums and counts.
+* Calculate averages.
+* Use type casting with `double`.
+* Handle cases where no even or odd numbers are present.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 47 completed! ✅*
 
 
 ```
