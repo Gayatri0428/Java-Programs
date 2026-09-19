@@ -4202,6 +4202,174 @@ Today I learned how to:
 
 **Day 47 completed! ✅*
 
+# Day 48 – Find Duplicate Elements in ArrayList
+
+## 📌 Objective
+
+The objective of this program is to find the **duplicate elements** present in an ArrayList using Java.
+
+## 📂 File Name
+
+`Day48_DuplicateElementsArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day48_DuplicateElementsArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<Integer> duplicates = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        for (int i = 0; i < numbers.size(); i++) {
+
+            for (int j = i + 1; j < numbers.size(); j++) {
+
+                if (numbers.get(i).equals(numbers.get(j))
+                        && !duplicates.contains(numbers.get(i))) {
+
+                    duplicates.add(numbers.get(i));
+                }
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+
+        if (duplicates.isEmpty()) {
+            System.out.println("No duplicate elements found.");
+        } else {
+            System.out.println("Duplicate elements: " + duplicates);
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 7
+Enter 7 numbers:
+10
+20
+10
+30
+40
+20
+50
+
+ArrayList: [10, 20, 10, 30, 40, 20, 50]
+Duplicate elements: [10, 20]
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* Nested `for` loops
+* `get()` method
+* `equals()` method
+* `contains()` method
+* Duplicate element detection
+* `isEmpty()` method
+
+## ⚙️ How It Works
+
+1. Create an ArrayList named `numbers` to store the input values.
+2. Create another ArrayList named `duplicates` to store duplicate values.
+3. Take the number of elements from the user.
+4. Add all values to the `numbers` ArrayList.
+5. Use two `for` loops to compare elements.
+6. If two elements are equal, check whether the duplicate is already stored.
+7. Add the duplicate only once.
+8. Display the duplicate elements.
+
+## 🔑 Important Logic
+
+```java
+if (numbers.get(i).equals(numbers.get(j))
+        && !duplicates.contains(numbers.get(i))) {
+
+    duplicates.add(numbers.get(i));
+}
+```
+
+### Explanation
+
+* `numbers.get(i)` → Gets the current element.
+* `numbers.get(j)` → Gets another element for comparison.
+* `.equals()` → Checks whether both values are equal.
+* `!duplicates.contains()` → Prevents the same duplicate from being added again.
+* `duplicates.add()` → Stores the duplicate element.
+
+## 📊 Example
+
+For the ArrayList:
+
+```text
+[10, 20, 10, 30, 40, 20, 50]
+```
+
+The duplicate elements are:
+
+```text
+10, 20
+```
+
+So the output is:
+
+```text
+Duplicate elements: [10, 20]
+```
+
+## ⏱️ Time Complexity
+
+**O(n²)** – Two nested loops are used to compare the elements.
+
+The `contains()` operation can also take additional time.
+
+## 💾 Space Complexity
+
+**O(n)** – Additional space is used for storing duplicate elements.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Find duplicate elements in an ArrayList.
+* Compare ArrayList elements.
+* Use nested loops.
+* Use `equals()` for comparison.
+* Use `contains()` to avoid repeated duplicates.
+* Store unique duplicate values in another ArrayList.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 48 completed! ✅**
+
+Continuing my journey of learning Java through daily coding practice.
+
+### GitHub Commit Message
+
+```text
+Day 48: Find duplicate elements in ArrayList
+```
 
 ```
 
