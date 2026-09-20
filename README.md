@@ -4362,17 +4362,144 @@ Today I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 48 completed! ✅**
+# Day 49 – Remove Duplicate Elements from ArrayList
 
-Continuing my journey of learning Java through daily coding practice.
+## 📌 Objective
 
-### GitHub Commit Message
+The objective of this program is to **remove duplicate elements from an ArrayList** and create a new ArrayList containing only unique elements.
+
+## 📂 File Name
+
+`Day49_RemoveDuplicatesArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day49_RemoveDuplicatesArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<Integer> uniqueNumbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        for (int number : numbers) {
+            if (!uniqueNumbers.contains(number)) {
+                uniqueNumbers.add(number);
+            }
+        }
+
+        System.out.println("\nOriginal ArrayList: " + numbers);
+        System.out.println("After removing duplicates: " + uniqueNumbers);
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
 
 ```text
-Day 48: Find duplicate elements in ArrayList
+Enter number of elements: 7
+Enter 7 numbers:
+10
+20
+10
+30
+20
+40
+10
+
+Original ArrayList: [10, 20, 10, 30, 20, 40, 10]
+After removing duplicates: [10, 20, 30, 40]
 ```
 
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* Enhanced `for` loop
+* `contains()` method
+* `add()` method
+* Duplicate removal
+* Unique elements
+
+## ⚙️ How It Works
+
+1. Create an ArrayList named `numbers` to store the input values.
+2. Create another ArrayList named `uniqueNumbers`.
+3. Take the number of elements from the user.
+4. Store all numbers in the original ArrayList.
+5. Traverse the original ArrayList using a `for-each` loop.
+6. Check whether the current number already exists in `uniqueNumbers`.
+7. If it does not exist, add it to `uniqueNumbers`.
+8. Display both the original and duplicate-free ArrayLists.
+
+## 🔑 Important Logic
+
+```java
+if (!uniqueNumbers.contains(number)) {
+    uniqueNumbers.add(number);
+}
 ```
 
+### Explanation
+
+* `contains(number)` checks whether the number already exists.
+* `!` means **not**.
+* If the number is not already present, it is added.
+* Therefore, every number appears only once in the final ArrayList.
+
+## 📊 Example
+
+Original ArrayList:
+
+```text
+[10, 20, 10, 30, 20, 40, 10]
+```
+
+After removing duplicates:
+
+```text
+[10, 20, 30, 40]
+```
+
+The order of the first occurrence of each number is preserved.
+
+## ⏱️ Time Complexity
+
+**O(n²)** in the worst case because `contains()` may scan the `uniqueNumbers` list for every element.
+
+## 💾 Space Complexity
+
+**O(n)** for storing the unique elements.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Identify duplicate elements.
+* Remove duplicates from an ArrayList.
+* Use the `contains()` method.
+* Create a separate ArrayList for unique elements.
+* Preserve the order of first occurrence.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 49 completed! ✅**
 
 
 
