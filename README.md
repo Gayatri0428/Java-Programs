@@ -4500,6 +4500,207 @@ Today I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 49 completed! ✅**
+# Day 50 – Find Second Largest Element in ArrayList
+
+## 📌 Objective
+
+The objective of this program is to find the **second largest unique element** in an ArrayList using Java.
+
+## 📂 File Name
+
+`Day50_SecondLargestArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day50_SecondLargestArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        if (n < 2) {
+            System.out.println("Enter at least 2 elements.");
+            sc.close();
+            return;
+        }
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        Integer largest = null;
+        Integer secondLargest = null;
+
+        for (int number : numbers) {
+
+            if (largest == null || number > largest) {
+                secondLargest = largest;
+                largest = number;
+            }
+            else if (number != largest &&
+                     (secondLargest == null || number > secondLargest)) {
+                secondLargest = number;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+
+        if (secondLargest == null) {
+            System.out.println("No second largest unique element found.");
+        } else {
+            System.out.println("Second largest element: " + secondLargest);
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 6
+Enter 6 numbers:
+10
+40
+20
+50
+30
+40
+
+ArrayList: [10, 40, 20, 50, 30, 40]
+Second largest element: 40
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* Enhanced `for` loop
+* `if-else`
+* Comparison operators
+* Finding largest and second largest values
+* Handling duplicate values
+* `Integer` wrapper class
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>` to store the numbers.
+2. Take the number of elements from the user.
+3. Store all numbers in the ArrayList.
+4. Create two variables:
+
+   * `largest`
+   * `secondLargest`
+5. Traverse the ArrayList.
+6. If a number is greater than the current largest value:
+
+   * Move the current largest to `secondLargest`.
+   * Make the current number the new largest.
+7. Otherwise, check whether the number can become the second largest.
+8. Ignore duplicate values of the largest number.
+9. Display the second largest unique element.
+
+## 🔑 Important Logic
+
+```java
+if (largest == null || number > largest) {
+    secondLargest = largest;
+    largest = number;
+}
+```
+
+When a new largest number is found, the previous largest becomes the second largest.
+
+```java
+else if (number != largest &&
+         (secondLargest == null || number > secondLargest)) {
+    secondLargest = number;
+}
+```
+
+This condition ensures that:
+
+* The number is not equal to the largest.
+* The number is greater than the current second largest.
+
+## 📊 Example
+
+Given:
+
+```text
+[10, 40, 20, 50, 30, 40]
+```
+
+Largest:
+
+```text
+50
+```
+
+Second largest unique element:
+
+```text
+40
+```
+
+Therefore:
+
+```text
+Second largest element: 40
+```
+
+## ⚠️ Special Case
+
+If all elements are the same:
+
+```text
+[20, 20, 20, 20]
+```
+
+There is no second largest **unique** element.
+
+The program displays:
+
+```text
+No second largest unique element found.
+```
+
+## ⏱️ Time Complexity
+
+**O(n)** – The ArrayList is traversed only once.
+
+## 💾 Space Complexity
+
+**O(n)** – The ArrayList stores `n` elements.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Find the largest element.
+* Find the second largest unique element.
+* Traverse an ArrayList.
+* Handle duplicate values.
+* Use conditional statements effectively.
+* Solve the problem without sorting the ArrayList.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 50 completed! 🎉**
+
+
 
 
 
