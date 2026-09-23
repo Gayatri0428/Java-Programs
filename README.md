@@ -4699,6 +4699,215 @@ Today I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 50 completed! 🎉**
+# Day 51 – Find Second Smallest Element in ArrayList
+
+## 📌 Objective
+
+The objective of this program is to find the **second smallest unique element** in an ArrayList using Java.
+
+## 📂 File Name
+
+`Day51_SecondSmallestArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day51_SecondSmallestArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        if (n < 2) {
+            System.out.println("Enter at least 2 elements.");
+            sc.close();
+            return;
+        }
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        Integer smallest = null;
+        Integer secondSmallest = null;
+
+        for (int number : numbers) {
+
+            if (smallest == null || number < smallest) {
+                secondSmallest = smallest;
+                smallest = number;
+            }
+            else if (number != smallest &&
+                     (secondSmallest == null || number < secondSmallest)) {
+                secondSmallest = number;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+
+        if (secondSmallest == null) {
+            System.out.println("No second smallest unique element found.");
+        } else {
+            System.out.println("Second smallest element: " + secondSmallest);
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 6
+Enter 6 numbers:
+50
+20
+10
+40
+30
+20
+
+ArrayList: [50, 20, 10, 40, 30, 20]
+Second smallest element: 20
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* Enhanced `for` loop
+* `if-else`
+* Comparison operators
+* Finding smallest and second smallest values
+* Handling duplicate values
+* `Integer` wrapper class
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>` to store the numbers.
+2. Take the number of elements from the user.
+3. Add the numbers to the ArrayList.
+4. Create two variables:
+
+   * `smallest`
+   * `secondSmallest`
+5. Traverse the ArrayList using a `for-each` loop.
+6. If a number is smaller than the current smallest value:
+
+   * Move the current smallest to `secondSmallest`.
+   * Make the current number the new smallest.
+7. Otherwise, check whether the number can become the second smallest.
+8. Ignore duplicate values of the smallest number.
+9. Display the second smallest unique element.
+
+## 🔑 Important Logic
+
+```java
+if (smallest == null || number < smallest) {
+    secondSmallest = smallest;
+    smallest = number;
+}
+```
+
+When a new smallest number is found, the previous smallest becomes the second smallest.
+
+```java
+else if (number != smallest &&
+         (secondSmallest == null || number < secondSmallest)) {
+    secondSmallest = number;
+}
+```
+
+This condition ensures that:
+
+* The number is not equal to the smallest.
+* The number is smaller than the current second smallest.
+* Duplicate smallest values are ignored.
+
+## 📊 Example
+
+Given:
+
+```text
+[50, 20, 10, 40, 30, 20]
+```
+
+Smallest element:
+
+```text
+10
+```
+
+Second smallest unique element:
+
+```text
+20
+```
+
+Therefore:
+
+```text
+Second smallest element: 20
+```
+
+## ⚠️ Special Case
+
+If all elements are the same:
+
+```text
+[20, 20, 20, 20]
+```
+
+There is no second smallest **unique** element.
+
+The program displays:
+
+```text
+No second smallest unique element found.
+```
+
+## ⏱️ Time Complexity
+
+**O(n)** – The ArrayList is traversed only once.
+
+## 💾 Space Complexity
+
+**O(n)** – The ArrayList stores `n` elements.
+
+## 🎯 Learning Outcome
+
+Today I learned how to:
+
+* Find the smallest element.
+* Find the second smallest unique element.
+* Traverse an ArrayList.
+* Handle duplicate values.
+* Use conditional statements.
+* Solve the problem without sorting the ArrayList.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 51 completed! ✅**
+
+Continuing my journey of learning Java through daily coding practice.
+
+### GitHub Commit Message
+
+```text
+Day 51: Find second smallest element in ArrayList
+```
+
 
 
 
