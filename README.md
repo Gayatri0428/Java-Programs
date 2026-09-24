@@ -4899,20 +4899,139 @@ Today I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 51 completed! ✅**
+# Day 52 – Search for an Element in ArrayList 🔎
 
-Continuing my journey of learning Java through daily coding practice.
+## 📌 Objective
 
-### GitHub Commit Message
+The objective of this program is to **search for a specific element in an ArrayList** and display its index position if the element is found.
 
-```text
-Day 51: Find second smallest element in ArrayList
+## 📂 File Name
+
+`Day52_SearchElementArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day52_SearchElementArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.print("Enter the element to search: ");
+        int target = sc.nextInt();
+
+        int position = -1;
+
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) == target) {
+                position = i;
+                break;
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+
+        if (position != -1) {
+            System.out.println("Element " + target + " found at index: " + position);
+        } else {
+            System.out.println("Element " + target + " not found.");
+        }
+
+        sc.close();
+    }
+}
 ```
 
+## 🖥️ Sample Output
 
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10
+20
+30
+40
+50
+Enter the element to search: 30
 
+ArrayList: [10, 20, 30, 40, 50]
+Element 30 found at index: 2
+```
 
+## 🧠 Concepts Used
 
+* ArrayList
+* Scanner
+* User input
+* `add()` method
+* `get()` method
+* `size()` method
+* `for` loop
+* Conditional statements
+* Linear search
 
+## ⚙️ How It Works
 
+1. Create an `ArrayList<Integer>`.
+2. Ask the user for the number of elements.
+3. Store the elements in the ArrayList.
+4. Ask the user for the element to search.
+5. Traverse the ArrayList using a `for` loop.
+6. Compare each element with the target.
+7. If found, store its index.
+8. Display whether the element was found or not.
 
+## ⭐ Important Logic
+
+```java
+if (numbers.get(i) == target) {
+    position = i;
+    break;
+}
+```
+
+* `numbers.get(i)` gets the element at index `i`.
+* `target` is the element we want to find.
+* If both are equal, the element is found.
+* `break` stops the loop after finding the first occurrence.
+
+## ⏱️ Time Complexity
+
+**O(n)**
+
+The program may need to check every element in the ArrayList.
+
+## 💾 Space Complexity
+
+**O(n)** for storing the elements in the ArrayList.
+
+Auxiliary space used for searching is **O(1)**.
+
+## 🎯 Learning Outcome
+
+After completing this program, I learned how to:
+
+* Search elements in an ArrayList.
+* Access ArrayList elements using indexes.
+* Use loops for searching.
+* Handle user input dynamically.
+* Find the position of an element.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 52 / 365**
 
