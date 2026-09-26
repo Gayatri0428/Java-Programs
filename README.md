@@ -5034,4 +5034,166 @@ After completing this program, I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 52 / 365**
+# Day 53 – Find All Occurrences of an Element in ArrayList 🔎
+
+## 📌 Objective
+
+The objective of this program is to **find all occurrences of a specific element in an ArrayList** and display all the index positions where the element is present.
+
+## 📂 File Name
+
+`Day53_AllOccurrencesArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day53_AllOccurrencesArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.print("Enter the element to search: ");
+        int target = sc.nextInt();
+
+        ArrayList<Integer> positions = new ArrayList<>();
+
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) == target) {
+                positions.add(i);
+            }
+        }
+
+        System.out.println("\nArrayList: " + numbers);
+
+        if (positions.isEmpty()) {
+            System.out.println("Element " + target + " not found.");
+        } else {
+            System.out.println("Element " + target + " found at indexes: " + positions);
+            System.out.println("Total occurrences: " + positions.size());
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 7
+Enter 7 numbers:
+10
+20
+30
+20
+40
+20
+50
+Enter the element to search: 20
+
+ArrayList: [10, 20, 30, 20, 40, 20, 50]
+Element 20 found at indexes: [1, 3, 5]
+Total occurrences: 3
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* User input
+* `add()` method
+* `get()` method
+* `size()` method
+* `isEmpty()` method
+* `for` loop
+* Conditional statements
+* Linear search
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>` to store numbers.
+2. Take the number of elements from the user.
+3. Add all elements to the ArrayList.
+4. Ask the user for the element to search.
+5. Traverse the entire ArrayList using a `for` loop.
+6. Compare every element with the target.
+7. If the element matches, store its index in another ArrayList.
+8. Display all the indexes where the element occurs.
+9. Display the total number of occurrences.
+
+## ⭐ Important Logic
+
+```java
+if (numbers.get(i) == target) {
+    positions.add(i);
+}
+```
+
+The important difference from **Day 52** is that we **do not use `break`**.
+
+In Day 52, the loop stopped after finding the first occurrence.
+
+Here, the loop continues until the end so that **all occurrences** can be found.
+
+## 🔍 Example
+
+For:
+
+```text
+ArrayList: [10, 20, 30, 20, 40, 20, 50]
+Target: 20
+```
+
+The element `20` appears at:
+
+```text
+Index 1
+Index 3
+Index 5
+```
+
+Therefore:
+
+```text
+Indexes: [1, 3, 5]
+Total occurrences: 3
+```
+
+## ⏱️ Time Complexity
+
+**O(n)**
+
+The program checks every element in the ArrayList.
+
+## 💾 Space Complexity
+
+**O(n)** in the worst case because the `positions` ArrayList may store the index of every element if all elements match the target.
+
+## 🎯 Learning Outcome
+
+After completing this program, I learned how to:
+
+* Search for multiple occurrences of an element.
+* Find all index positions of an element.
+* Traverse an ArrayList completely.
+* Store matching indexes in another ArrayList.
+* Count the total occurrences of an element.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 53 / 365**
 
