@@ -5196,4 +5196,164 @@ After completing this program, I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 53 / 365**
+# Day 54 – Replace an Element in ArrayList 🔄
+
+## 📌 Objective
+
+The objective of this program is to **replace an existing element in an ArrayList** at a specific index using the `set()` method.
+
+## 📂 File Name
+
+`Day54_ReplaceElementArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day54_ReplaceElementArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("ArrayList before replacement: " + numbers);
+
+        System.out.print("Enter the index to replace: ");
+        int index = sc.nextInt();
+
+        if (index >= 0 && index < numbers.size()) {
+
+            System.out.print("Enter the new element: ");
+            int newElement = sc.nextInt();
+
+            numbers.set(index, newElement);
+
+            System.out.println("ArrayList after replacement: " + numbers);
+
+        } else {
+            System.out.println("Invalid index.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10
+20
+30
+40
+50
+ArrayList before replacement: [10, 20, 30, 40, 50]
+Enter the index to replace: 2
+Enter the new element: 100
+ArrayList after replacement: [10, 20, 100, 40, 50]
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* User input
+* `add()` method
+* `set()` method
+* `size()` method
+* `for` loop
+* Conditional statements
+* Index validation
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Take the number of elements from the user.
+3. Store the elements in the ArrayList.
+4. Display the original ArrayList.
+5. Ask the user for the index to replace.
+6. Check whether the index is valid.
+7. Ask for the new element.
+8. Use the `set()` method to replace the old element.
+9. Display the updated ArrayList.
+
+## ⭐ Important Logic
+
+```java
+numbers.set(index, newElement);
+```
+
+The `set()` method replaces the element at the specified index.
+
+For example:
+
+```text
+Before:
+[10, 20, 30, 40, 50]
+
+Index:
+  0   1   2   3   4
+
+set(2, 100)
+
+After:
+[10, 20, 100, 40, 50]
+```
+
+The element `30` at index `2` is replaced with `100`.
+
+## 🔐 Index Validation
+
+```java
+if (index >= 0 && index < numbers.size())
+```
+
+This condition makes sure that the entered index exists in the ArrayList.
+
+For example, if the ArrayList contains 5 elements, valid indexes are:
+
+```text
+0, 1, 2, 3, 4
+```
+
+An index such as `5` is invalid.
+
+## ⏱️ Time Complexity
+
+**O(1)** for replacing an element using `set()`.
+
+## 💾 Space Complexity
+
+**O(n)** for storing the elements in the ArrayList.
+
+## 🎯 Learning Outcome
+
+After completing this program, I learned how to:
+
+* Replace elements in an ArrayList.
+* Use the `set()` method.
+* Work with ArrayList indexes.
+* Validate an index before accessing it.
+* Modify existing ArrayList data.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 54 / 365**
+
+
+
 
