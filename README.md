@@ -5353,6 +5353,191 @@ After completing this program, I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 54 / 365**
+# Day 55 – Insert an Element at a Specific Index in ArrayList 📌
+
+## 📌 Objective
+
+The objective of this program is to **insert a new element at a specific index in an ArrayList** using the `add(index, element)` method.
+
+## 📂 File Name
+
+`Day55_InsertElementArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day55_InsertElementArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("ArrayList before insertion: " + numbers);
+
+        System.out.print("Enter the index to insert: ");
+        int index = sc.nextInt();
+
+        if (index >= 0 && index <= numbers.size()) {
+
+            System.out.print("Enter the new element: ");
+            int newElement = sc.nextInt();
+
+            numbers.add(index, newElement);
+
+            System.out.println("ArrayList after insertion: " + numbers);
+
+        } else {
+            System.out.println("Invalid index.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10
+20
+30
+40
+50
+ArrayList before insertion: [10, 20, 30, 40, 50]
+Enter the index to insert: 2
+Enter the new element: 100
+ArrayList after insertion: [10, 20, 100, 30, 40, 50]
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* User input
+* `add()` method
+* `add(index, element)` method
+* `size()` method
+* `for` loop
+* Conditional statements
+* Index validation
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Take the number of elements from the user.
+3. Add all elements to the ArrayList.
+4. Display the original ArrayList.
+5. Ask the user for the index where the new element should be inserted.
+6. Check whether the index is valid.
+7. Take the new element from the user.
+8. Use `add(index, element)` to insert the element.
+9. Display the updated ArrayList.
+
+## ⭐ Important Logic
+
+```java
+numbers.add(index, newElement);
+```
+
+The `add(index, element)` method **inserts** a new element at the specified index.
+
+The existing elements from that index onward are shifted to the right.
+
+### Example
+
+```text
+Before:
+[10, 20, 30, 40, 50]
+
+Insert 100 at index 2:
+
+After:
+[10, 20, 100, 30, 40, 50]
+```
+
+The original `30` at index `2` moves to index `3`.
+
+## 🔐 Index Validation
+
+```java
+if (index >= 0 && index <= numbers.size())
+```
+
+For an ArrayList containing 5 elements, valid insertion indexes are:
+
+```text
+0, 1, 2, 3, 4, 5
+```
+
+Notice that `5` is also valid for **insertion**, because an element can be added at the end.
+
+## 🔄 Difference Between `set()` and `add()`
+
+| Method                | Purpose                      | Size Changes? |
+| --------------------- | ---------------------------- | ------------- |
+| `set(index, element)` | Replaces an existing element | No            |
+| `add(index, element)` | Inserts a new element        | Yes           |
+
+### Example
+
+```java
+numbers.set(2, 100);
+```
+
+Result:
+
+```text
+[10, 20, 100, 40, 50]
+```
+
+Whereas:
+
+```java
+numbers.add(2, 100);
+```
+
+Result:
+
+```text
+[10, 20, 100, 30, 40, 50]
+```
+
+## ⏱️ Time Complexity
+
+**O(n)** in the worst case because existing elements may need to be shifted.
+
+## 💾 Space Complexity
+
+**O(n)** for storing the ArrayList elements.
+
+## 🎯 Learning Outcome
+
+After completing this program, I learned how to:
+
+* Insert elements into an ArrayList.
+* Use `add(index, element)`.
+* Work with ArrayList indexes.
+* Validate insertion indexes.
+* Understand the difference between `add()` and `set()`.
+* Understand how elements shift during insertion.
+
+
+
 
 
 
