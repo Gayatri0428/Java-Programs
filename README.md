@@ -5535,6 +5535,173 @@ After completing this program, I learned how to:
 * Validate insertion indexes.
 * Understand the difference between `add()` and `set()`.
 * Understand how elements shift during insertion.
+* # Day 56 – Remove an Element from ArrayList 🗑️
+
+## 📌 Objective
+
+The objective of this program is to **remove an element from an ArrayList at a specific index** using the `remove(index)` method.
+
+## 📂 File Name
+
+`Day56_RemoveElementArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day56_RemoveElementArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("ArrayList before removal: " + numbers);
+
+        System.out.print("Enter the index to remove: ");
+        int index = sc.nextInt();
+
+        if (index >= 0 && index < numbers.size()) {
+
+            int removedElement = numbers.remove(index);
+
+            System.out.println("Removed element: " + removedElement);
+            System.out.println("ArrayList after removal: " + numbers);
+
+        } else {
+            System.out.println("Invalid index.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10
+20
+30
+40
+50
+ArrayList before removal: [10, 20, 30, 40, 50]
+Enter the index to remove: 2
+Removed element: 30
+ArrayList after removal: [10, 20, 40, 50]
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* User input
+* `add()` method
+* `remove()` method
+* `size()` method
+* `for` loop
+* Conditional statements
+* Index validation
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Take the number of elements from the user.
+3. Store the elements in the ArrayList.
+4. Display the original ArrayList.
+5. Ask the user for the index to remove.
+6. Check whether the index is valid.
+7. Use `remove(index)` to remove the element.
+8. Store the removed element in a variable.
+9. Display the removed element.
+10. Display the updated ArrayList.
+
+## ⭐ Important Logic
+
+```java
+int removedElement = numbers.remove(index);
+```
+
+The `remove(index)` method:
+
+* Removes the element at the specified index.
+* Returns the removed element.
+* Shifts the remaining elements to the left.
+* Decreases the size of the ArrayList by 1.
+
+### Example
+
+```text
+Before:
+[10, 20, 30, 40, 50]
+
+Index:
+  0   1   2   3   4
+
+remove(2)
+
+Removed element:
+30
+
+After:
+[10, 20, 40, 50]
+```
+
+## 🔐 Index Validation
+
+```java
+if (index >= 0 && index < numbers.size())
+```
+
+This ensures that the entered index exists in the ArrayList.
+
+For an ArrayList containing 5 elements, the valid indexes are:
+
+```text
+0, 1, 2, 3, 4
+```
+
+## 🔄 Difference Between `remove()` and `set()`
+
+| Method                | Purpose             | Size Changes? |
+| --------------------- | ------------------- | ------------- |
+| `set(index, element)` | Replaces an element | No            |
+| `add(index, element)` | Inserts an element  | Yes           |
+| `remove(index)`       | Removes an element  | Yes           |
+
+## ⏱️ Time Complexity
+
+**O(n)** in the worst case because the elements after the removed index may need to be shifted.
+
+## 💾 Space Complexity
+
+**O(n)** for storing the ArrayList elements.
+
+## 🎯 Learning Outcome
+
+After completing this program, I learned how to:
+
+* Remove an element from an ArrayList.
+* Use the `remove(index)` method.
+* Validate an ArrayList index.
+* Store and display the removed element.
+* Understand how elements shift after removal.
+* Understand the difference between `add()`, `set()`, and `remove()`.
+
+
 
 
 
