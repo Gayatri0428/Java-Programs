@@ -5700,12 +5700,143 @@ After completing this program, I learned how to:
 * Store and display the removed element.
 * Understand how elements shift after removal.
 * Understand the difference between `add()`, `set()`, and `remove()`.
+* # Day 57 – Remove an Element by Value from ArrayList 🗑️
 
+## 📌 Objective
 
+The objective of this program is to remove a specific element from an ArrayList using its **value** instead of its index.
 
+## 📂 File Name
 
+`Day57_RemoveElementByValueArrayList.java`
 
+## 💻 Program
 
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class Day57_RemoveElementByValueArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("ArrayList before removal: " + numbers);
+
+        System.out.print("Enter the element to remove: ");
+        int target = sc.nextInt();
+
+        if (numbers.remove(Integer.valueOf(target))) {
+            System.out.println("Element " + target + " removed successfully.");
+        } else {
+            System.out.println("Element " + target + " not found.");
+        }
+
+        System.out.println("ArrayList after removal: " + numbers);
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 6
+Enter 6 numbers:
+10
+20
+30
+40
+50
+60
+ArrayList before removal: [10, 20, 30, 40, 50, 60]
+Enter the element to remove: 30
+Element 30 removed successfully.
+ArrayList after removal: [10, 20, 40, 50, 60]
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* `add()` method
+* `remove()` method
+* `Integer.valueOf()` method
+* Conditional statements
+* `for` loop
+* Boolean return values
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>` to store numbers.
+2. Ask the user how many elements to enter.
+3. Read and store all the elements.
+4. Display the original ArrayList.
+5. Ask the user which value to remove.
+6. Use `Integer.valueOf(target)` to specify removal by value.
+7. If the value exists, remove its first occurrence and display a success message.
+8. If the value does not exist, display a not-found message.
+9. Display the updated ArrayList.
+
+## ⭐ Important Logic
+
+```java
+if (numbers.remove(Integer.valueOf(target))) {
+    System.out.println("Element " + target + " removed successfully.");
+} else {
+    System.out.println("Element " + target + " not found.");
+}
+```
+
+The `remove()` method returns:
+
+* `true` if the specified value is found and removed.
+* `false` if the value is not found.
+
+**Important:** This program removes only the first occurrence of the specified value.
+
+## 🔄 Difference Between Removing by Index and by Value
+
+| Code                                   | Purpose                                         |
+| -------------------------------------- | ----------------------------------------------- |
+| `numbers.remove(2);`                   | Removes the element at index `2`.               |
+| `numbers.remove(Integer.valueOf(30));` | Removes the first occurrence of the value `30`. |
+
+Using `Integer.valueOf()` is important because `ArrayList<Integer>` has overloaded `remove()` methods for an index and an object.
+
+## ⏱️ Time Complexity
+
+**O(n)** in the worst case because Java may need to search the ArrayList for the value and shift elements after removal.
+
+## 💾 Space Complexity
+
+**O(n)** for storing the elements in the ArrayList.
+
+## 🎯 Learning Outcome
+
+After completing this program, I learned how to:
+
+* Remove an element using its value.
+* Understand the difference between index-based and value-based removal.
+* Use `Integer.valueOf()` with an ArrayList.
+* Check whether an element was successfully removed.
+* Handle elements that are not present in the list.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 57 / 365**
 
 
