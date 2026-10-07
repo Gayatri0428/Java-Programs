@@ -5838,5 +5838,177 @@ After completing this program, I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 57 / 365**
+# Day 58 – Check if an Element Exists in ArrayList 🔍
+
+## 📌 Objective
+
+The objective of this program is to **check whether a specific element is present in an ArrayList** using the `contains()` method.
+
+## 📂 File Name
+
+`Day58_CheckElementArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day58_CheckElementArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("ArrayList: " + numbers);
+
+        System.out.print("Enter the element to check: ");
+        int target = sc.nextInt();
+
+        if (numbers.contains(target)) {
+            System.out.println("Element " + target + " is present in the ArrayList.");
+        } else {
+            System.out.println("Element " + target + " is not present in the ArrayList.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10
+20
+30
+40
+50
+ArrayList: [10, 20, 30, 40, 50]
+Enter the element to check: 30
+Element 30 is present in the ArrayList.
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* `add()` method
+* `contains()` method
+* `for` loop
+* Conditional statements
+* Boolean values
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Ask the user for the number of elements.
+3. Store the elements in the ArrayList.
+4. Display the ArrayList.
+5. Ask the user for the element to check.
+6. Use the `contains()` method to check whether the element exists.
+7. If `contains()` returns `true`, display that the element is present.
+8. Otherwise, display that the element is not present.
+
+## ⭐ Important Logic
+
+```java
+if (numbers.contains(target)) {
+    System.out.println("Element " + target + " is present in the ArrayList.");
+}
+```
+
+The `contains()` method returns a boolean value:
+
+```text
+true  → Element exists
+false → Element does not exist
+```
+
+### Example
+
+```java
+numbers.contains(30);
+```
+
+For:
+
+```text
+[10, 20, 30, 40, 50]
+```
+
+The result is:
+
+```text
+true
+```
+
+## 🔄 Difference Between `contains()` and `indexOf()`
+
+| Method              | Purpose                             | Return Value     |
+| ------------------- | ----------------------------------- | ---------------- |
+| `contains(element)` | Checks whether an element exists    | `true` / `false` |
+| `indexOf(element)`  | Finds the first index of an element | Index / `-1`     |
+
+Example:
+
+```java
+numbers.contains(30);
+```
+
+Output:
+
+```text
+true
+```
+
+```java
+numbers.indexOf(30);
+```
+
+Output:
+
+```text
+2
+```
+
+## ⏱️ Time Complexity
+
+**O(n)** in the worst case because the ArrayList may need to be searched from beginning to end.
+
+## 💾 Space Complexity
+
+**O(n)** for storing the elements in the ArrayList.
+
+The `contains()` operation itself uses **O(1)** auxiliary space.
+
+## 🎯 Learning Outcome
+
+After completing this program, I learned how to:
+
+* Check whether an element exists in an ArrayList.
+* Use the `contains()` method.
+* Work with boolean results.
+* Use conditional statements with collection methods.
+* Understand the difference between `contains()` and `indexOf()`.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 58 / 365**
+
+
 
 
