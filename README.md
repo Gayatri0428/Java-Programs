@@ -6008,6 +6008,200 @@ After completing this program, I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 58 / 365**
+# Day 59 – Find First Index of an Element in ArrayList 🔎
+
+## 📌 Objective
+
+The objective of this program is to **find the first index of a specific element in an ArrayList** using the `indexOf()` method.
+
+## 📂 File Name
+
+`Day59_FindIndexArrayList.java`
+
+## 💻 Program
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day59_FindIndexArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("ArrayList: " + numbers);
+
+        System.out.print("Enter the element to find: ");
+        int target = sc.nextInt();
+
+        int index = numbers.indexOf(target);
+
+        if (index != -1) {
+            System.out.println("First occurrence of " + target + " is at index: " + index);
+        } else {
+            System.out.println("Element " + target + " not found.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## 🖥️ Sample Output
+
+```text
+Enter number of elements: 7
+Enter 7 numbers:
+10
+20
+30
+20
+40
+50
+20
+ArrayList: [10, 20, 30, 20, 40, 50, 20]
+Enter the element to find: 20
+First occurrence of 20 is at index: 1
+```
+
+## 🧠 Concepts Used
+
+* ArrayList
+* Scanner
+* Dynamic user input
+* `add()` method
+* `indexOf()` method
+* `size()` method
+* `for` loop
+* Conditional statements
+
+## ⚙️ How It Works
+
+1. Create an `ArrayList<Integer>`.
+2. Ask the user for the number of elements.
+3. Store the elements in the ArrayList.
+4. Display the ArrayList.
+5. Ask the user for the element to find.
+6. Use the `indexOf()` method to search for the element.
+7. If the element exists, display its first index.
+8. If the element does not exist, `indexOf()` returns `-1`.
+
+## ⭐ Important Logic
+
+```java
+int index = numbers.indexOf(target);
+```
+
+The `indexOf()` method returns the **index of the first occurrence** of the specified element.
+
+For example:
+
+```text
+ArrayList: [10, 20, 30, 20, 40, 50, 20]
+```
+
+For:
+
+```java
+numbers.indexOf(20);
+```
+
+The result is:
+
+```text
+1
+```
+
+Although `20` also occurs at indexes `3` and `6`, `indexOf()` returns only the **first occurrence**.
+
+## 🔍 When Element Is Not Found
+
+If the element is not present:
+
+```java
+numbers.indexOf(100);
+```
+
+The result is:
+
+```text
+-1
+```
+
+Therefore, we use:
+
+```java
+if (index != -1)
+```
+
+to check whether the element was found.
+
+## 🔄 Difference Between `contains()` and `indexOf()`
+
+| Method              | Purpose                       | Return Value     |
+| ------------------- | ----------------------------- | ---------------- |
+| `contains(element)` | Checks whether element exists | `true` / `false` |
+| `indexOf(element)`  | Finds first occurrence        | Index / `-1`     |
+
+Example:
+
+```java
+numbers.contains(20);
+```
+
+Output:
+
+```text
+true
+```
+
+```java
+numbers.indexOf(20);
+```
+
+Output:
+
+```text
+1
+```
+
+## ⏱️ Time Complexity
+
+**O(n)** in the worst case because the ArrayList may need to be searched completely.
+
+## 💾 Space Complexity
+
+**O(n)** for storing the elements in the ArrayList.
+
+The `indexOf()` operation itself uses **O(1)** auxiliary space.
+
+## 🎯 Learning Outcome
+
+After completing this program, I learned how to:
+
+* Find the first occurrence of an element.
+* Use the `indexOf()` method.
+* Understand the `-1` return value.
+* Work with ArrayList indexes.
+* Understand the difference between `contains()` and `indexOf()`.
+
+## 🚀 365 Days of Java Challenge
+
+**Day 59 / 365**
+
+
+
 
 
 
