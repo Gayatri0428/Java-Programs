@@ -6199,6 +6199,171 @@ After completing this program, I learned how to:
 ## 🚀 365 Days of Java Challenge
 
 **Day 59 / 365**
+# Day 60 - Find Last Index of an Element in ArrayList
+
+## 📌 Objective
+Write a Java program to find the **last occurrence (index)** of a given element in an `ArrayList` using the `lastIndexOf()` method.
+
+## 💻 File Name
+`Day60_LastIndexArrayList.java`
+
+## 🧑‍💻 Java Code
+
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day60_LastIndexArrayList {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.println("ArrayList: " + numbers);
+
+        System.out.print("Enter the element to find: ");
+        int target = sc.nextInt();
+
+        int index = numbers.lastIndexOf(target);
+
+        if (index != -1) {
+            System.out.println(
+                "Last occurrence of " + target +
+                " is at index: " + index
+            );
+        } else {
+            System.out.println("Element " + target + " not found.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter number of elements: 7
+Enter 7 numbers:
+10
+20
+30
+20
+40
+50
+20
+ArrayList: [10, 20, 30, 20, 40, 50, 20]
+Enter the element to find: 20
+Last occurrence of 20 is at index: 6
+```
+
+## 🔍 How It Works
+
+1. Import `ArrayList` and `Scanner`.
+2. Create an empty `ArrayList` to store integers.
+3. Read the number of elements from the user.
+4. Use a `for` loop to add the elements to the list.
+5. Read the target element to search for.
+6. Use `lastIndexOf(target)` to find its last occurrence.
+7. If the returned index is not `-1`, print the index.
+8. Otherwise, display that the element was not found.
+
+## 📝 Simple Line-by-Line Dry Run
+
+**Input ArrayList:**
+
+`[10, 20, 30, 20, 40, 50, 20]`
+
+**Target element:** `20`
+
+| Index | Element |
+|---:|---:|
+| 0 | 10 |
+| 1 | 20 |
+| 2 | 30 |
+| 3 | 20 |
+| 4 | 40 |
+| 5 | 50 |
+| 6 | 20 |
+
+**Step 1:** The program stores all seven numbers in the `ArrayList`.
+
+**Step 2:** The user enters `20` as the target element.
+
+**Step 3:** The statement executes:
+
+```java
+int index = numbers.lastIndexOf(target);
+```
+
+Java searches for the last occurrence of `20` and returns index `6`.
+
+**Step 4:** The condition is checked:
+
+```java
+if (index != -1)
+```
+
+Since `6 != -1` is true, the program prints the last occurrence's index.
+
+**Final Output:**
+
+```text
+Last occurrence of 20 is at index: 6
+```
+
+## ⭐ Important Logic
+
+```java
+int index = numbers.lastIndexOf(target);
+```
+
+- `lastIndexOf()` returns the index of the last occurrence.
+- If the element appears multiple times, it returns the last matching index.
+- If the element is absent, it returns `-1`.
+- ArrayList indexes start from `0`.
+
+## 🔄 Difference Between `indexOf()` and `lastIndexOf()`
+
+| Method | Purpose |
+|---|---|
+| `indexOf()` | Returns the first occurrence's index |
+| `lastIndexOf()` | Returns the last occurrence's index |
+
+For example, in `[10, 20, 30, 20]`, `indexOf(20)` returns `1`, while `lastIndexOf(20)` returns `3`.
+
+## 🧠 Concepts Learned
+
+- Java `ArrayList`
+- User input using `Scanner`
+- `lastIndexOf()` method
+- Conditional statements
+- ArrayList indexing
+- Searching for duplicate elements
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** O(n) — in the worst case, Java checks the list's elements to find the last occurrence.
+- **Space Complexity:** O(n) — the list stores `n` elements.
+
+## 🎯 Learning Outcome
+
+Learned how to find the last occurrence of an element in an `ArrayList` using Java's built-in `lastIndexOf()` method.
+
+## 📅 Challenge Progress
+
+**Day 60 / 365 — 365 Days of Java Challenge**
+
+
 
 
 
