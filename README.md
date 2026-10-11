@@ -6362,12 +6362,145 @@ Learned how to find the last occurrence of an element in an `ArrayList` using Ja
 ## 📅 Challenge Progress
 
 **Day 60 / 365 — 365 Days of Java Challenge**
+# Day 61 - Count Elements Greater Than a Given Number
 
+## 📌 Objective
 
+Write a Java program to count how many elements in an `ArrayList` are greater than a given number entered by the user.
 
+## 💻 File Name
 
+`Day61_CountGreaterElements.java`
 
+## 🧑‍💻 Java Code
 
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class Day61_CountGreaterElements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.print("Enter the target number: ");
+        int target = sc.nextInt();
+
+        int count = 0;
+
+        for (int num : numbers) {
+            if (num > target) {
+                count++;
+            }
+        }
+
+        System.out.println("ArrayList: " + numbers);
+        System.out.println(
+            "Count of elements greater than " + target + ": " + count
+        );
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10 25 30 15 40
+Enter the target number: 20
+ArrayList: [10, 25, 30, 15, 40]
+Count of elements greater than 20: 3
+```
+
+## 🔍 How It Works
+
+1. Import `ArrayList` and `Scanner`.
+2. Create an empty `ArrayList` to store integers.
+3. Read the number of elements from the user.
+4. Use a `for` loop to add the numbers to the list.
+5. Read the target number.
+6. Initialize `count = 0`.
+7. Visit each element using an enhanced `for` loop.
+8. If an element is greater than the target, increase `count`.
+9. Display the final count.
+
+## 📝 Simple Line-by-Line Dry Run
+
+**ArrayList:** `[10, 25, 30, 15, 40]`
+
+**Target:** `20`
+
+Initially:
+
+```java
+int count = 0;
+```
+
+The count starts at zero.
+
+| Step | Element (`num`) | Condition (`num > 20`) | Count |
+|---|---:|---|---:|
+| 1 | 10 | False | 0 |
+| 2 | 25 | True | 1 |
+| 3 | 30 | True | 2 |
+| 4 | 15 | False | 2 |
+| 5 | 40 | True | 3 |
+
+**Final result:** Three elements (`25`, `30`, and `40`) are greater than `20`.
+
+Output:
+
+```text
+Count of elements greater than 20: 3
+```
+
+## ⭐ Important Logic
+
+```java
+for (int num : numbers) {
+    if (num > target) {
+        count++;
+    }
+}
+```
+
+- `for (int num : numbers)` visits every element in the ArrayList.
+- `if (num > target)` checks whether the current element is greater than the target.
+- `count++` increases the count by one whenever the condition is true.
+
+## 🧠 Concepts Learned
+
+- Java `ArrayList`
+- User input using `Scanner`
+- Enhanced `for` loop
+- `if` condition
+- Counter variable
+- Comparison operators
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** O(n), because each element is checked once.
+- **Space Complexity:** O(n), because the ArrayList stores `n` elements.
+
+## 🎯 Learning Outcome
+
+Learned how to traverse an ArrayList, compare each element with a target number, and count elements that satisfy a condition.
+
+## 📅 Challenge Progress
+
+**Day 61 / 365 — 365 Days of Java Challenge**
 
 
