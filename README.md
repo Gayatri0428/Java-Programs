@@ -6502,5 +6502,180 @@ Learned how to traverse an ArrayList, compare each element with a target number,
 ## 📅 Challenge Progress
 
 **Day 61 / 365 — 365 Days of Java Challenge**
+# Day 62 - Find the Third Largest Element in an ArrayList
+
+## 📌 Objective
+
+Write a Java program to find the **third-largest distinct element** in an `ArrayList`.
+
+Duplicate elements are counted only once.
+
+## 💻 File Name
+
+`Day62_ThirdLargestArrayList.java`
+
+## 🧑‍💻 Java Code
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Day62_ThirdLargestArrayList {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        if (n < 3) {
+            System.out.println("Enter at least 3 elements.");
+            sc.close();
+            return;
+        }
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        Collections.sort(numbers, Collections.reverseOrder());
+
+        int distinctCount = 0;
+        int previous = 0;
+        boolean first = true;
+        boolean found = false;
+
+        for (int num : numbers) {
+            if (first || num != previous) {
+                distinctCount++;
+                previous = num;
+                first = false;
+            }
+
+            if (distinctCount == 3) {
+                System.out.println("Third largest element: " + num);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println(
+                "Third largest distinct element does not exist."
+            );
+        }
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter number of elements: 6
+Enter 6 numbers:
+10 40 20 50 30 40
+Third largest element: 30
+```
+
+## 🔍 How It Works
+
+1. Import `ArrayList`, `Collections`, and `Scanner`.
+2. Read the number of elements.
+3. Read the integers and store them in the ArrayList.
+4. Sort the list in descending order using `Collections.sort()` and `Collections.reverseOrder()`.
+5. Traverse the sorted list.
+6. Count only distinct values, skipping duplicates.
+7. When the distinct count reaches three, print that element.
+8. If fewer than three distinct values exist, display a message.
+
+## 📝 Simple Line-by-Line Dry Run
+
+**Input:**
+
+`[10, 40, 20, 50, 30, 40]`
+
+**Step 1: Sort in descending order**
+
+```text
+[50, 40, 40, 30, 20, 10]
+```
+
+**Step 2: Initialize the variables**
+
+```java
+int distinctCount = 0;
+int previous = 0;
+boolean first = true;
+boolean found = false;
+```
+
+- `distinctCount` tracks distinct values.
+- `previous` stores the last counted value.
+- `first` identifies the first element.
+- `found` indicates whether the third-largest distinct value was found.
+
+**Step 3: Traverse the sorted list**
+
+| Element | Action | Distinct count |
+|---:|---|---:|
+| 50 | Count first distinct value | 1 |
+| 40 | Count second distinct value | 2 |
+| 40 | Duplicate, so skip | 2 |
+| 30 | Count third distinct value | 3 |
+
+**Step 4: Check the condition**
+
+```java
+if (distinctCount == 3)
+```
+
+The condition becomes true when the program reaches `30`.
+
+**Step 5: Print the result**
+
+```text
+Third largest element: 30
+```
+
+## ⭐ Important Logic
+
+```java
+if (first || num != previous) {
+    distinctCount++;
+    previous = num;
+    first = false;
+}
+```
+
+This condition counts a number only when it is different from the previous counted number.
+
+## 🧠 Concepts Learned
+
+- Java `ArrayList`
+- Sorting in descending order
+- `Collections.reverseOrder()`
+- Enhanced `for` loop
+- Boolean variables
+- Finding distinct elements
+- Conditional statements
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** O(n log n), because sorting takes O(n log n).
+- **Space Complexity:** O(n) for storing the ArrayList; sorting may use additional implementation-dependent space.
+
+## 🎯 Learning Outcome
+
+Learned how to sort an ArrayList in descending order and find the third-largest distinct element while handling duplicates.
+
+## 📅 Challenge Progress
+
+**Day 62 / 365 — 365 Days of Java Challenge**
+
 
 
