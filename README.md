@@ -6818,4 +6818,144 @@ Learned how to rotate an ArrayList to the left using Java's built-in `Collection
 ## 📅 Challenge Progress
 
 **Day 63 / 365 — 365 Days of Java Challenge**
+# Day 64 - Rotate an ArrayList to the Right
+
+## 📌 Objective
+
+Write a Java program to rotate the elements of an `ArrayList` to the right by a given number of positions.
+
+## 💻 File Name
+
+`Day64_RightRotateArrayList.java`
+
+## 🧑‍💻 Java Code
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Day64_RightRotateArrayList {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        if (n <= 0) {
+            System.out.println("Enter at least one element.");
+            sc.close();
+            return;
+        }
+
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(sc.nextInt());
+        }
+
+        System.out.print("Enter rotation positions: ");
+        int k = sc.nextInt();
+
+        k = ((k % n) + n) % n;
+
+        Collections.rotate(numbers, k);
+
+        System.out.println("Rotated ArrayList: " + numbers);
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10 20 30 40 50
+Enter rotation positions: 2
+Rotated ArrayList: [40, 50, 10, 20, 30]
+```
+
+## 🔍 How It Works
+
+1. Import `ArrayList`, `Collections`, and `Scanner`.
+2. Read the number of elements from the user.
+3. Store the numbers in an ArrayList.
+4. Read the number of right-rotation positions.
+5. Normalize the rotation count using the modulo operator.
+6. Use `Collections.rotate(numbers, k)` to rotate the list to the right.
+7. Print the rotated ArrayList.
+
+## 📝 Simple Line-by-Line Dry Run
+
+**Original ArrayList:** `[10, 20, 30, 40, 50]`
+
+**Rotation positions:** `2`
+
+### Step 1: Normalize the rotation count
+
+```java
+k = ((k % n) + n) % n;
+```
+
+Here, `k = 2` and `n = 5`.
+
+`k = ((2 % 5) + 5) % 5 = 2`
+
+The rotation count remains `2`.
+
+### Step 2: Rotate the ArrayList
+
+```java
+Collections.rotate(numbers, k);
+```
+
+Java executes `Collections.rotate(numbers, 2)`.
+
+| Step | Operation | ArrayList |
+|---|---|---|
+| Initial | Original list | `[10, 20, 30, 40, 50]` |
+| 1 | Move `50` to the beginning | `[50, 10, 20, 30, 40]` |
+| 2 | Move `40` to the beginning | `[40, 50, 10, 20, 30]` |
+
+### Final Output
+
+```text
+Rotated ArrayList: [40, 50, 10, 20, 30]
+```
+
+## ⭐ Important Logic
+
+```java
+Collections.rotate(numbers, k);
+```
+
+- A positive rotation distance rotates elements to the right.
+- A negative rotation distance rotates elements to the left.
+- Rotating by the list size returns the list to its original order.
+
+## 🧠 Concepts Learned
+
+- Java `ArrayList`
+- `Collections.rotate()`
+- Right rotation
+- Modulo operator (`%`)
+- Enhanced `for` loop concepts
+- User input using `Scanner`
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** `O(n)` for rotating the list.
+- **Auxiliary Space Complexity:** `O(1)` for the rotation operation, excluding the input list.
+
+## 🎯 Learning Outcome
+
+Learned how to rotate an ArrayList to the right using Java's built-in `Collections.rotate()` method.
+
+## 📅 Challenge Progress
+
+**Day 64 / 365 — 365 Days of Java Challenge**
 
