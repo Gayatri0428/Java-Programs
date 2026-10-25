@@ -6958,4 +6958,155 @@ Learned how to rotate an ArrayList to the right using Java's built-in `Collectio
 ## 📅 Challenge Progress
 
 **Day 64 / 365 — 365 Days of Java Challenge**
+# Day 65 - Swap Two Elements in an ArrayList
+
+## 📌 Objective
+Write a Java program to swap two elements in an `ArrayList` using the `Collections.swap()` method.
+
+## 💻 File Name
+`Day65_SwapElementsArrayList.java`
+
+## 🧑‍💻 Java Code
+
+```java
+import java.util.*;
+
+public class Day65_SwapElementsArrayList {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> list = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        if (n <= 0) {
+            System.out.println("Enter at least one element.");
+            sc.close();
+            return;
+        }
+
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            list.add(sc.nextInt());
+        }
+
+        System.out.print("Enter two indexes to swap: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        if (a >= 0 && a < n && b >= 0 && b < n) {
+            Collections.swap(list, a, b);
+            System.out.println("After swapping: " + list);
+        } else {
+            System.out.println("Invalid indexes!");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10 20 30 40 50
+Enter two indexes to swap: 1 3
+After swapping: [10, 40, 30, 20, 50]
+```
+
+## 🔍 How It Works
+
+1. Import the required Java utility classes.
+2. Create an empty `ArrayList`.
+3. Read the number of elements.
+4. Add the input numbers to the list.
+5. Read the two indexes to swap.
+6. Check whether both indexes are valid.
+7. Use `Collections.swap()` to exchange the elements.
+8. Display the updated ArrayList.
+
+## 📝 Simple Line-by-Line Dry Run
+
+**Original ArrayList:** `[10, 20, 30, 40, 50]`
+
+**Indexes entered:** `1` and `3`
+
+ArrayList indexes start from `0`.
+
+| Index | Original Element | Element After Swapping |
+|---:|---:|---:|
+| 0 | 10 | 10 |
+| 1 | 20 | 40 |
+| 2 | 30 | 30 |
+| 3 | 40 | 20 |
+| 4 | 50 | 50 |
+
+### Step 1: Read the indexes
+
+```java
+int a = sc.nextInt();
+int b = sc.nextInt();
+```
+
+The user enters `1` and `3`.
+
+### Step 2: Validate the indexes
+
+```java
+if (a >= 0 && a < n && b >= 0 && b < n)
+```
+
+Both indexes are within the valid range, so the condition is true.
+
+### Step 3: Swap the elements
+
+```java
+Collections.swap(list, a, b);
+```
+
+The elements at indexes `1` and `3` are exchanged.
+
+- Index `1`: `20` becomes `40`.
+- Index `3`: `40` becomes `20`.
+
+### Final Output
+
+```text
+After swapping: [10, 40, 30, 20, 50]
+```
+
+## ⭐ Important Logic
+
+```java
+Collections.swap(list, a, b);
+```
+
+- `list` is the ArrayList.
+- `a` is the first index.
+- `b` is the second index.
+- `Collections.swap()` exchanges the elements at those positions.
+
+## 🧠 Concepts Learned
+
+- Java `ArrayList`
+- `Collections.swap()`
+- ArrayList indexing
+- User input using `Scanner`
+- Conditional statements
+- Index validation
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** `O(1)` for swapping two elements in an ArrayList.
+- **Auxiliary Space Complexity:** `O(1)` for the swap operation, excluding the list used to store the input.
+
+## 🎯 Learning Outcome
+
+Learned how to swap two elements in an ArrayList using Java's built-in `Collections.swap()` method.
+
+## 📅 Challenge Progress
+
+**Day 65 / 365 — 365 Days of Java Challenge**
 
