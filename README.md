@@ -7109,4 +7109,142 @@ Learned how to swap two elements in an ArrayList using Java's built-in `Collecti
 ## 📅 Challenge Progress
 
 **Day 65 / 365 — 365 Days of Java Challenge**
+# Day 66 - Copy One ArrayList into Another
+
+## 📌 Objective
+
+Write a Java program to copy all elements from one `ArrayList` into another using Java.
+
+## 💻 File Name
+
+`Day66_CopyArrayList.java`
+
+## 🧑‍💻 Java Code
+
+```java
+import java.util.*;
+
+public class Day66_CopyArrayList {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> list1 = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++)
+            list1.add(sc.nextInt());
+
+        ArrayList<Integer> list2 = new ArrayList<>(list1);
+
+        System.out.println("Original ArrayList: " + list1);
+        System.out.println("Copied ArrayList: " + list2);
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10 20 30 40 50
+Original ArrayList: [10, 20, 30, 40, 50]
+Copied ArrayList: [10, 20, 30, 40, 50]
+```
+
+## 🔍 How It Works
+
+1. Import the required Java utility classes.
+2. Create an empty `ArrayList` named `list1`.
+3. Read the number of elements from the user.
+4. Add the input numbers to `list1`.
+5. Create `list2` using `new ArrayList<>(list1)`.
+6. Display the original and copied lists.
+
+## 📝 Simple Line-by-Line Dry Run
+
+**Input elements:** `10 20 30 40 50`
+
+### Step 1: Create the first ArrayList
+
+```java
+ArrayList<Integer> list1 = new ArrayList<>();
+```
+
+Initially, `list1` is empty.
+
+**Result:** `[]`
+
+### Step 2: Add the input elements
+
+```java
+for (int i = 0; i < n; i++)
+    list1.add(sc.nextInt());
+```
+
+The user enters five numbers.
+
+**Result:** `[10, 20, 30, 40, 50]`
+
+### Step 3: Copy the ArrayList
+
+```java
+ArrayList<Integer> list2 = new ArrayList<>(list1);
+```
+
+Java creates a new ArrayList containing the elements of `list1`.
+
+**Result:**
+- `list1` = `[10, 20, 30, 40, 50]`
+- `list2` = `[10, 20, 30, 40, 50]`
+
+### Step 4: Print both lists
+
+```java
+System.out.println("Original ArrayList: " + list1);
+System.out.println("Copied ArrayList: " + list2);
+```
+
+**Final Output:**
+
+```text
+Original ArrayList: [10, 20, 30, 40, 50]
+Copied ArrayList: [10, 20, 30, 40, 50]
+```
+
+## ⭐ Important Logic
+
+```java
+ArrayList<Integer> list2 = new ArrayList<>(list1);
+```
+
+- `list1` is the original list.
+- `list2` is a new list containing the same elements.
+- Adding or removing elements in one list does not change the other list's structure.
+- This is a **shallow copy**; if the lists contain mutable objects, those objects are shared between the lists.
+
+## 🧠 Concepts Learned
+
+- Java `ArrayList`
+- Copying collections
+- `ArrayList` constructors
+- User input using `Scanner`
+- Enhanced understanding of reference types
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** `O(n)` because all elements are copied.
+- **Auxiliary Space Complexity:** `O(n)` for the new ArrayList.
+
+## 🎯 Learning Outcome
+
+Learned how to copy an ArrayList into another using the `ArrayList` copy constructor.
+
+## 📅 Challenge Progress
+
+**Day 66 / 365 — 365 Days of Java Challenge**
 
