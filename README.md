@@ -7247,4 +7247,148 @@ Learned how to copy an ArrayList into another using the `ArrayList` copy constru
 ## 📅 Challenge Progress
 
 **Day 66 / 365 — 365 Days of Java Challenge**
+# Day 67 - Convert an ArrayList to an Array
+
+## 📌 Objective
+
+Write a Java program to convert an `ArrayList` into a normal Java array using the `toArray()` method.
+
+## 💻 File Name
+
+`Day67_ArrayListToArray.java`
+
+## 🧑‍💻 Java Code
+
+```java
+import java.util.*;
+
+public class Day67_ArrayListToArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> list = new ArrayList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            list.add(sc.nextInt());
+        }
+
+        Integer[] arr = list.toArray(new Integer[0]);
+
+        System.out.println("ArrayList: " + list);
+        System.out.println("Array: " + Arrays.toString(arr));
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter number of elements: 5
+Enter 5 numbers:
+10 20 30 40 50
+ArrayList: [10, 20, 30, 40, 50]
+Array: [10, 20, 30, 40, 50]
+```
+
+## 🔍 How It Works
+
+1. Import the required Java utility classes.
+2. Create an empty `ArrayList` named `list`.
+3. Read the number of elements from the user.
+4. Use a `for` loop to add the numbers to the ArrayList.
+5. Convert the ArrayList into an `Integer` array using `toArray()`.
+6. Display the ArrayList and the converted array.
+
+## 📝 Simple Line-by-Line Dry Run
+
+**Input elements:** `10 20 30 40 50`
+
+### Step 1: Create an ArrayList
+
+```java
+ArrayList<Integer> list = new ArrayList<>();
+```
+
+Initially, the list is empty.
+
+**Result:** `[]`
+
+### Step 2: Add elements
+
+```java
+for (int i = 0; i < n; i++) {
+    list.add(sc.nextInt());
+}
+```
+
+The user enters five numbers.
+
+**Result:** `[10, 20, 30, 40, 50]`
+
+### Step 3: Convert the ArrayList into an array
+
+```java
+Integer[] arr = list.toArray(new Integer[0]);
+```
+
+The `toArray()` method creates an array containing the elements of the ArrayList.
+
+**Result:**
+
+```text
+arr = [10, 20, 30, 40, 50]
+```
+
+### Step 4: Display the array
+
+```java
+System.out.println("Array: " + Arrays.toString(arr));
+```
+
+`Arrays.toString()` converts the array contents into a readable string.
+
+**Final Output:**
+
+```text
+Array: [10, 20, 30, 40, 50]
+```
+
+## ⭐ Important Logic
+
+```java
+Integer[] arr = list.toArray(new Integer[0]);
+```
+
+- `toArray()` converts the ArrayList into an array.
+- `Integer[]` represents an array of integer objects.
+- `Arrays.toString(arr)` prints the array elements in a readable format.
+
+**Remember:** `ArrayList` can grow or shrink dynamically, while an array has a fixed length after creation.
+
+## 🧠 Concepts Learned
+
+- Java `ArrayList`
+- Java arrays
+- `toArray()` method
+- `Arrays.toString()` method
+- User input using `Scanner`
+- Collections and arrays
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** `O(n)` because all elements are copied into the array.
+- **Auxiliary Space Complexity:** `O(n)` for the resulting array.
+
+## 🎯 Learning Outcome
+
+Learned how to convert an ArrayList into a normal Java array using the `toArray()` method.
+
+## 📅 Challenge Progress
+
+**Day 67 / 365 — 365 Days of Java Challenge**
 
