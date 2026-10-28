@@ -7391,4 +7391,124 @@ Learned how to convert an ArrayList into a normal Java array using the `toArray(
 ## 📅 Challenge Progress
 
 **Day 67 / 365 — 365 Days of Java Challenge**
+# Day 68: HashMap Basics in Java
+
+## 📌 Aim
+To learn how to create and use a `HashMap` in Java to store student IDs and names and search for a student using their ID.
+
+## 🧠 What is a HashMap?
+A `HashMap` is a Java collection that stores data as **key-value pairs**.
+
+- **Key:** A unique identifier, such as a student ID.
+- **Value:** The data associated with the key, such as a student name.
+- Duplicate keys are not stored separately; adding an existing key updates its value.
+- A `HashMap` does not guarantee the order of its entries.
+
+## 💻 Program
+
+**Filename:** `Day68_HashMapBasics.java`
+
+```java
+import java.util.*;
+
+public class Day68_HashMapBasics {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<Integer, String> students = new HashMap<>();
+
+        System.out.print("Enter number of students: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter student ID: ");
+            int id = sc.nextInt();
+            sc.nextLine();
+
+            System.out.print("Enter student name: ");
+            String name = sc.nextLine();
+
+            students.put(id, name);
+        }
+
+        System.out.println("Student Details: " + students);
+
+        System.out.print("Enter ID to search: ");
+        int searchId = sc.nextInt();
+
+        if (students.containsKey(searchId)) {
+            System.out.println("Student Name: " + students.get(searchId));
+        } else {
+            System.out.println("Student not found.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter number of students: 3
+Enter student ID: 101
+Enter student name: Ravi
+Enter student ID: 102
+Enter student name: Gayathri
+Enter student ID: 103
+Enter student name: Sita
+Student Details: {101=Ravi, 102=Gayathri, 103=Sita}
+Enter ID to search: 102
+Student Name: Gayathri
+```
+
+**Note:** The order of student details may vary because `HashMap` does not guarantee insertion order.
+
+## 🔍 Dry Run
+
+Suppose the user enters three students.
+
+| Step | Operation | HashMap Contents |
+|---|---|---|
+| 1 | Create an empty HashMap | `{}` |
+| 2 | Add ID 101 with Ravi | `{101=Ravi}` |
+| 3 | Add ID 102 with Gayathri | `{101=Ravi, 102=Gayathri}` |
+| 4 | Add ID 103 with Sita | `{101=Ravi, 102=Gayathri, 103=Sita}` |
+| 5 | Search for ID 102 | Key found |
+| 6 | Retrieve the name | `Gayathri` |
+
+**Final Output:**
+```text
+Student Name: Gayathri
+```
+
+## 🔑 Important HashMap Methods
+
+| Method | Purpose |
+|---|---|
+| `put(key, value)` | Adds or updates a key-value pair |
+| `get(key)` | Returns the value for a key |
+| `containsKey(key)` | Checks whether a key exists |
+| `remove(key)` | Removes an entry |
+| `size()` | Returns the number of entries |
+
+## ⏱️ Time and Space Complexity
+
+- **Insertion:** O(1) average
+- **Searching by key:** O(1) average
+- **Space Complexity:** O(n), where `n` is the number of students
+
+*Note: HashMap operations can take longer in certain collision scenarios.*
+
+## ✅ Key Learnings
+
+- Understood the concept of key-value pairs.
+- Learned how to create and use a `HashMap`.
+- Practiced adding student records using `put()`.
+- Learned to search for a student using `containsKey()` and `get()`.
+- Understood basic time and space complexity.
+
+## 🚀 Challenge Completed
+
+**Day 68 of my 365 Days of Java Challenge!**
 
