@@ -7511,4 +7511,127 @@ Student Name: Gayathri
 ## 🚀 Challenge Completed
 
 **Day 68 of my 365 Days of Java Challenge!**
+# Day 70: Check Whether Two Strings Are Anagrams in Java
+
+## 📌 Aim
+To write a Java program to check whether two strings are anagrams.
+
+## 🧠 What Is an Anagram?
+An anagram is a word formed by rearranging the letters of another word. Both strings must contain the same characters with the same frequencies.
+
+**Examples:**
+- `listen` and `silent` — Anagrams
+- `hello` and `world` — Not anagrams
+- `race` and `care` — Anagrams
+
+## 💻 Java Program
+
+**Filename:** `Day70_CheckAnagrams.java`
+
+Save only the Java code below in your `.java` file. Do not copy the Markdown code markers.
+
+```java
+import java.util.*;
+
+public class Day70_CheckAnagrams {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first string: ");
+        String s1 = sc.nextLine().replaceAll("\\s+", "").toLowerCase();
+
+        System.out.print("Enter second string: ");
+        String s2 = sc.nextLine().replaceAll("\\s+", "").toLowerCase();
+
+        if (s1.length() != s2.length()) {
+            System.out.println("Strings are not anagrams.");
+        } else {
+            char[] a = s1.toCharArray();
+            char[] b = s2.toCharArray();
+
+            Arrays.sort(a);
+            Arrays.sort(b);
+
+            if (Arrays.equals(a, b)) {
+                System.out.println("Strings are anagrams.");
+            } else {
+                System.out.println("Strings are not anagrams.");
+            }
+        }
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter first string: listen
+Enter second string: silent
+Strings are anagrams.
+```
+
+### Another Test Case
+
+```text
+Enter first string: hello
+Enter second string: world
+Strings are not anagrams.
+```
+
+## 🔍 Dry Run
+
+**Input:**
+- First string: `listen`
+- Second string: `silent`
+
+| Step | Operation | Result |
+|---|---|---|
+| 1 | Convert both strings to lowercase | `listen`, `silent` |
+| 2 | Check their lengths | Both have 6 characters |
+| 3 | Convert strings into character arrays | `['l','i','s','t','e','n']`, `['s','i','l','e','n','t']` |
+| 4 | Sort both arrays | `eilnst`, `eilnst` |
+| 5 | Compare the arrays | Equal |
+| 6 | Print the result | Strings are anagrams. |
+
+## ⚙️ How the Program Works
+
+1. Read two strings from the user.
+2. Remove whitespace and convert the strings to lowercase.
+3. Check whether their lengths are equal.
+4. Convert both strings into character arrays.
+5. Sort both arrays using `Arrays.sort()`.
+6. Compare the arrays using `Arrays.equals()`.
+7. Display whether the strings are anagrams.
+
+## 🔑 Important Methods
+
+| Method | Purpose |
+|---|---|
+| `nextLine()` | Reads a complete line of input |
+| `replaceAll("\\s+", "")` | Removes whitespace |
+| `toLowerCase()` | Converts letters to lowercase |
+| `toCharArray()` | Converts a string into a character array |
+| `Arrays.sort()` | Sorts the array |
+| `Arrays.equals()` | Compares two arrays |
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** O(n log n), because sorting takes O(n log n).
+- **Space Complexity:** O(n), because character arrays are created.
+
+Here, `n` is the length of the strings.
+
+## ✅ Key Learnings
+
+- Learned how to check whether two strings are anagrams.
+- Practiced string manipulation.
+- Learned to sort character arrays.
+- Used `Arrays.equals()` to compare arrays.
+- Understood time and space complexity.
+
+## 🚀 Challenge Completed!
+
+**Day 70 of my 365 Days of Java Challenge!**
 
