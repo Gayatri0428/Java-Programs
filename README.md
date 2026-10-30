@@ -7634,4 +7634,98 @@ Here, `n` is the length of the strings.
 ## 🚀 Challenge Completed!
 
 **Day 70 of my 365 Days of Java Challenge!**
+# Day 72: Reverse Each Word in a Sentence Using Java
+
+## 📌 Aim
+To write a Java program that reverses each word in a sentence without changing the order of the words.
+
+## 🧠 Concept
+The program uses `StringBuilder` to reverse each word individually.
+
+**Example:**
+
+Input:
+`Java is easy`
+
+Output:
+`avaJ si ysae`
+
+## 💻 Java Program
+
+**Filename:** `Day72_ReverseEachWord.java`
+
+```java
+import java.util.*;
+
+public class Day72_ReverseEachWord {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String sentence = sc.nextLine();
+
+        String[] words = sentence.split(" ");
+
+        for (String word : words) {
+            System.out.print(new StringBuilder(word).reverse() + " ");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter a sentence: Java is easy
+avaJ si ysae
+```
+
+## 🔍 Dry Run
+
+**Input:** `Java is easy`
+
+| Step | Original Word | Reversed Word |
+|---|---|---|
+| 1 | Java | avaJ |
+| 2 | is | si |
+| 3 | easy | ysae |
+
+**Final Output:**
+`avaJ si ysae`
+
+## ⚙️ How the Program Works
+
+1. Read a sentence from the user using `Scanner`.
+2. Split the sentence into individual words using `split(" ")`.
+3. Iterate through each word using an enhanced `for` loop.
+4. Reverse each word using `StringBuilder(word).reverse()`.
+5. Print each reversed word.
+
+## 🔑 Important Methods
+
+| Method | Purpose |
+|---|---|
+| `nextLine()` | Reads the complete sentence |
+| `split(" ")` | Splits the sentence into words |
+| `StringBuilder()` | Creates a mutable sequence of characters |
+| `reverse()` | Reverses the characters |
+| Enhanced `for` loop | Processes each word |
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** O(n), where `n` is the total number of characters.
+- **Space Complexity:** O(n), for storing the words and reversed strings.
+
+## ✅ Key Learnings
+
+- Learned how to split a sentence into words.
+- Practiced using `StringBuilder`.
+- Learned to reverse each word independently.
+- Understood time and space complexity.
+
+## 🚀 Challenge Completed!
+
+**Day 72 of my 365 Days of Java Challenge!**
 
