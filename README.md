@@ -7728,4 +7728,111 @@ avaJ si ysae
 ## 🚀 Challenge Completed!
 
 **Day 72 of my 365 Days of Java Challenge!**
+# Day 73: Find the First Non-Repeating Character in a String Using Java
+
+## 📌 Aim
+To write a Java program to find the first character that appears only once in a given string.
+
+## 🧠 What Is a Non-Repeating Character?
+
+A non-repeating character is a character that appears only once in a string.
+
+**Example:**
+
+Input: `programming`
+
+Output: `p`
+
+## 💻 Java Program
+
+**Filename:** `Day73_FirstNonRepeatingCharacter.java`
+
+```java
+import java.util.*;
+
+public class Day73_FirstNonRepeatingCharacter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine().toLowerCase();
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if (str.indexOf(ch) == str.lastIndexOf(ch)) {
+                System.out.println("First non-repeating character: " + ch);
+                sc.close();
+                return;
+            }
+        }
+
+        System.out.println("No non-repeating character found.");
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter a string: programming
+First non-repeating character: p
+```
+
+## 🔍 Dry Run
+
+**Input:** `programming`
+
+| Character | First Index | Last Index | Result |
+|---|---:|---:|---|
+| p | 0 | 0 | Non-repeating |
+| r | 1 | 4 | Repeating |
+| o | 2 | 2 | Non-repeating |
+
+The program checks characters from left to right and stops when it finds `p`.
+
+**Final Output:** `p`
+
+## ⚙️ How the Program Works
+
+1. Read a string from the user.
+2. Convert the string into lowercase.
+3. Use a `for` loop to visit each character.
+4. Use `charAt(i)` to get the current character.
+5. Use `indexOf(ch)` to find its first occurrence.
+6. Use `lastIndexOf(ch)` to find its last occurrence.
+7. If both positions are equal, the character appears only once.
+8. Print the first non-repeating character.
+
+## 🔑 Important Java Methods
+
+| Method | Purpose |
+|---|---|
+| `nextLine()` | Reads a complete string |
+| `toLowerCase()` | Converts the string to lowercase |
+| `length()` | Returns the string length |
+| `charAt(i)` | Returns the character at a position |
+| `indexOf(ch)` | Finds the first occurrence |
+| `lastIndexOf(ch)` | Finds the last occurrence |
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** O(n²) in the worst case.
+- **Auxiliary Space Complexity:** O(1).
+
+Here, `n` represents the length of the string.
+
+## ✅ Key Learnings
+
+- Learned how to find non-repeating characters.
+- Practiced string traversal using a `for` loop.
+- Understood `indexOf()` and `lastIndexOf()`.
+- Learned how to stop a loop using `return`.
+- Understood time and space complexity.
+
+## 🚀 Challenge Completed!
+
+**Day 73 of my 365 Days of Java Challenge!**
 
