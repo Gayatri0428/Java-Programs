@@ -7835,4 +7835,140 @@ Here, `n` represents the length of the string.
 ## 🚀 Challenge Completed!
 
 **Day 73 of my 365 Days of Java Challenge!**
+# Day 74: Find Duplicate Characters in a String Using HashMap
 
+## 📌 Aim
+To write a Java program to find and display all duplicate characters in a given string using HashMap.
+
+## 🧠 What Are Duplicate Characters?
+
+Duplicate characters are characters that appear more than once in a string.
+
+**Example:**
+
+Input: `programming`
+
+Output:
+- r = 2
+- g = 2
+- m = 2
+
+## 💻 Java Program
+
+**Filename:** `Day74_DuplicateCharacters.java`
+
+```java
+import java.util.*;
+
+public class Day74_DuplicateCharacters {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine().toLowerCase();
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+            if (ch != ' ') {
+                map.put(ch, map.getOrDefault(ch, 0) + 1);
+            }
+        }
+
+        System.out.println("Duplicate characters:");
+
+        boolean found = false;
+
+        for (char ch : map.keySet()) {
+            if (map.get(ch) > 1) {
+                System.out.println(ch + " = " + map.get(ch));
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No duplicate characters found.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter a string: programming
+Duplicate characters:
+r = 2
+g = 2
+m = 2
+```
+
+**Note:** The order of duplicate characters may vary because HashMap does not guarantee insertion order.
+
+## 🔍 Dry Run
+
+**Input:** `programming`
+
+| Character | Frequency | Status |
+|---|---:|---|
+| p | 1 | Unique |
+| r | 2 | Duplicate |
+| o | 1 | Unique |
+| g | 2 | Duplicate |
+| a | 1 | Unique |
+| m | 2 | Duplicate |
+| i | 1 | Unique |
+| n | 1 | Unique |
+
+**Final Result:**
+
+```text
+r = 2
+g = 2
+m = 2
+```
+
+## ⚙️ How the Program Works
+
+1. Read a string from the user.
+2. Convert the string into lowercase.
+3. Create a HashMap to store characters and their frequencies.
+4. Convert the string into a character array using `toCharArray()`.
+5. Count each character using `getOrDefault()`.
+6. Store the character and its frequency in the HashMap.
+7. Check whether the frequency is greater than 1.
+8. Display all duplicate characters.
+
+## 🔑 Important Java Methods
+
+| Method | Purpose |
+|---|---|
+| `toLowerCase()` | Converts the string into lowercase |
+| `toCharArray()` | Converts a string into a character array |
+| `put()` | Inserts or updates a key-value pair |
+| `getOrDefault()` | Returns the existing value or a default value |
+| `keySet()` | Returns all keys from the HashMap |
+| `get()` | Retrieves the value associated with a key |
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** O(n) average.
+- **Space Complexity:** O(k), where k is the number of distinct characters.
+
+Here:
+- `n` = Total number of characters.
+- `k` = Number of distinct characters.
+
+## ✅ Key Learnings
+
+- Learned how to identify duplicate characters.
+- Practiced using HashMap.
+- Understood character frequency counting.
+- Learned the `getOrDefault()` method.
+- Improved understanding of Java Collections.
+
+## 🚀 Challenge Completed!
+
+**Day 74 of my 365 Days of Java Challenge!**
