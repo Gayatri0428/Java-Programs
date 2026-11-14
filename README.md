@@ -7972,3 +7972,147 @@ Here:
 ## 🚀 Challenge Completed!
 
 **Day 74 of my 365 Days of Java Challenge!**
+# Day 75: Find the Most Frequent Character in a String Using HashMap
+
+## 📌 Aim
+To write a Java program to find the character that appears the maximum number of times in a given string using HashMap.
+
+## 🧠 What Is the Most Frequent Character?
+
+The most frequent character is the character that appears the highest number of times in a string.
+
+**Example:**
+
+Input: `programming`
+
+Frequencies:
+- p = 1
+- r = 2
+- o = 1
+- g = 2
+- a = 1
+- m = 2
+- i = 1
+- n = 1
+
+Maximum frequency = 2
+
+Possible answers: `r`, `g`, or `m`.
+
+## 💻 Java Program
+
+**Filename:** `Day75_MostFrequentCharacter.java`
+
+```java
+import java.util.*;
+
+public class Day75_MostFrequentCharacter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine().toLowerCase();
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+            if (ch != ' ') {
+                map.put(ch, map.getOrDefault(ch, 0) + 1);
+            }
+        }
+
+        char maxChar = '\0';
+        int maxCount = 0;
+
+        for (char ch : map.keySet()) {
+            if (map.get(ch) > maxCount) {
+                maxCount = map.get(ch);
+                maxChar = ch;
+            }
+        }
+
+        if (maxCount > 0) {
+            System.out.println("Most frequent character: " + maxChar);
+            System.out.println("Frequency: " + maxCount);
+        } else {
+            System.out.println("No characters found.");
+        }
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter a string: programming
+Most frequent character: g
+Frequency: 2
+```
+
+**Note:** The characters `r`, `g`, and `m` all occur twice. Since HashMap does not guarantee iteration order, any one of these tied characters may be displayed.
+
+## 🔍 Dry Run
+
+**Input:** `programming`
+
+| Character | Frequency |
+|---|---:|
+| p | 1 |
+| r | 2 |
+| o | 1 |
+| g | 2 |
+| a | 1 |
+| m | 2 |
+| i | 1 |
+| n | 1 |
+
+**Maximum Frequency:** 2
+
+**Possible Most Frequent Characters:** `r`, `g`, `m`.
+
+## ⚙️ How the Program Works
+
+1. Read a string from the user.
+2. Convert the string into lowercase.
+3. Create a HashMap to store characters and their frequencies.
+4. Convert the string into a character array using `toCharArray()`.
+5. Count each character using `getOrDefault()`.
+6. Find the maximum frequency using a loop.
+7. Store the character with the highest frequency.
+8. Display the most frequent character and its frequency.
+
+## 🔑 Important Java Methods
+
+| Method | Purpose |
+|---|---|
+| `nextLine()` | Reads a complete string |
+| `toLowerCase()` | Converts the string into lowercase |
+| `toCharArray()` | Converts a string into a character array |
+| `put()` | Inserts or updates a key-value pair |
+| `getOrDefault()` | Returns the existing value or a default value |
+| `keySet()` | Returns all keys from the HashMap |
+| `get()` | Retrieves the value associated with a key |
+
+## ⏱️ Time and Space Complexity
+
+- **Time Complexity:** O(n) average.
+- **Space Complexity:** O(k).
+
+Where:
+- `n` = Total number of characters.
+- `k` = Number of distinct characters.
+
+## ✅ Key Learnings
+
+- Learned how to find the most frequent character.
+- Practiced using HashMap.
+- Understood character frequency counting.
+- Learned how to find the maximum value.
+- Improved understanding of Java Collections.
+
+## 🚀 Challenge Completed!
+
+**Day 75 of my 365 Days of Java Challenge!**
+
