@@ -8115,4 +8115,181 @@ Where:
 ## 🚀 Challenge Completed!
 
 **Day 75 of my 365 Days of Java Challenge!**
+# Day 76: Sort Characters in a String by Frequency Using Java
+
+## 📌 Aim
+To write a Java program to sort characters in a string according to their frequency of occurrence using HashMap and ArrayList.
+
+## 🧠 Concept
+
+Sorting characters by frequency means arranging characters based on how many times they appear in a string.
+
+- Characters with higher frequency appear first.
+- If two characters have the same frequency, they are arranged alphabetically.
+
+**Example:**
+
+Input: `programming`
+
+Output:
+```text
+g = 2
+m = 2
+r = 2
+a = 1
+i = 1
+n = 1
+o = 1
+p = 1
+```
+
+## 💻 Java Program
+
+**Filename:** `Day76_SortCharactersByFrequency.java`
+
+```java
+import java.util.*;
+
+public class Day76_SortCharactersByFrequency {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine().toLowerCase();
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+            if (ch != ' ') {
+                map.put(ch, map.getOrDefault(ch, 0) + 1);
+            }
+        }
+
+        List<Character> chars = new ArrayList<>(map.keySet());
+
+        chars.sort((a, b) -> {
+            int result = map.get(b) - map.get(a);
+            return result != 0 ? result : Character.compare(a, b);
+        });
+
+        System.out.println("Characters sorted by frequency:");
+
+        for (char ch : chars) {
+            System.out.println(ch + " = " + map.get(ch));
+        }
+
+        sc.close();
+    }
+}
+```
+
+## ▶️ Sample Output
+
+```text
+Enter a string: programming
+Characters sorted by frequency:
+g = 2
+m = 2
+r = 2
+a = 1
+i = 1
+n = 1
+o = 1
+p = 1
+```
+
+## 🔍 Dry Run
+
+**Input:** `programming`
+
+### Step 1: Count character frequencies
+
+| Character | Frequency |
+|---|---:|
+| p | 1 |
+| r | 2 |
+| o | 1 |
+| g | 2 |
+| a | 1 |
+| m | 2 |
+| i | 1 |
+| n | 1 |
+
+### Step 2: Sort by frequency
+
+| Character | Frequency | Position |
+|---|---:|---|
+| g | 2 | 1 |
+| m | 2 | 2 |
+| r | 2 | 3 |
+| a | 1 | 4 |
+| i | 1 | 5 |
+| n | 1 | 6 |
+| o | 1 | 7 |
+| p | 1 | 8 |
+
+### Step 3: Final Output
+
+```text
+g = 2
+m = 2
+r = 2
+a = 1
+i = 1
+n = 1
+o = 1
+p = 1
+```
+
+## ⚙️ How the Program Works
+
+1. Read a string from the user.
+2. Convert the string into lowercase.
+3. Create a HashMap to store characters and their frequencies.
+4. Use `toCharArray()` to access each character.
+5. Count each character using `getOrDefault()`.
+6. Store unique characters in an ArrayList.
+7. Sort characters by descending frequency.
+8. If frequencies are equal, arrange characters alphabetically.
+9. Display the sorted characters and their frequencies.
+
+## 🔑 Important Java Methods
+
+| Method | Purpose |
+|---|---|
+| `toLowerCase()` | Converts the string into lowercase |
+| `toCharArray()` | Converts a string into a character array |
+| `getOrDefault()` | Returns the existing value or a default value |
+| `keySet()` | Returns all keys from HashMap |
+| `ArrayList` | Stores unique characters |
+| `sort()` | Sorts the characters |
+| `Character.compare()` | Compares two characters alphabetically |
+
+## ⏱️ Time and Space Complexity
+
+Let:
+- `n` = Total number of characters.
+- `k` = Number of distinct characters.
+
+**Time Complexity:** O(n + k log k)
+
+- Frequency counting: O(n) average.
+- Sorting: O(k log k).
+
+**Space Complexity:** O(k)
+
+The HashMap and ArrayList store the distinct characters.
+
+## ✅ Key Learnings
+
+- Learned how to count character frequencies.
+- Practiced using HashMap and ArrayList.
+- Understood sorting using a custom comparator.
+- Learned descending frequency sorting.
+- Practiced alphabetical sorting when frequencies are equal.
+- Improved understanding of Java Collections.
+
+## 🚀 Challenge Completed!
+
+**Day 76 of my 365 Days of Java Challenge!**
 
