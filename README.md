@@ -8292,4 +8292,70 @@ The HashMap and ArrayList store the distinct characters.
 ## 🚀 Challenge Completed!
 
 **Day 76 of my 365 Days of Java Challenge!**
+Day 77 - First Repeated Character
+
+Program
+
+Find the First Repeated Character in a String using Java
+
+Objective
+
+Find the first character that appears more than once in a string using a "HashSet" and a loop.
+
+Code
+
+import java.util.*;
+
+public class Day77_FirstRepeatedCharacter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine().toLowerCase();
+
+        HashSet<Character> set = new HashSet<>();
+
+        for (char ch : str.toCharArray()) {
+            if (ch == ' ') {
+                continue;
+            }
+
+            if (set.contains(ch)) {
+                System.out.println("First repeated character: " + ch);
+                sc.close();
+                return;
+            }
+
+            set.add(ch);
+        }
+
+        System.out.println("No repeated character found.");
+        sc.close();
+    }
+}
+
+Concepts Covered
+
+* String handling in Java
+* "Scanner" class for user input
+* "toLowerCase()" method
+* "toCharArray()" method
+* "HashSet" collection
+* "contains()" method
+* Enhanced "for" loop
+* "continue" statement
+* "return" statement
+
+Output
+
+Enter a string: programming
+First repeated character: r
+
+Learning Summary
+
+Today, I learned how to find the first repeated character in a string using Java. I used a "HashSet" to store characters that have already appeared and the "contains()" method to check for duplicates. This program helped me understand string traversal, collections, and efficient duplicate detection.
+
+---
+
+365 Days of Java Challenge 🚀
 
