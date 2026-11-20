@@ -8292,18 +8292,28 @@ The HashMap and ArrayList store the distinct characters.
 ## 🚀 Challenge Completed!
 
 **Day 76 of my 365 Days of Java Challenge!**
-Day 77 - First Repeated Character
+# Day 77: Find the First Repeated Character in a String Using Java
 
-Program
+## 📌 Aim
+To write a Java program to find the first repeated character in a string using `HashSet`.
 
-Find the First Repeated Character in a String using Java
+## 🧠 What Is a Repeated Character?
 
-Objective
+A repeated character is a character that appears more than once in a string.
 
-Find the first character that appears more than once in a string using a "HashSet" and a loop.
+This program traverses the string from left to right and identifies the first character that appears again.
 
-Code
+**Example:**
 
+Input: `programming`
+
+Output: `r`
+
+## 💻 Java Program
+
+**Filename:** `Day77_FirstRepeatedCharacter.java`
+
+```java
 import java.util.*;
 
 public class Day77_FirstRepeatedCharacter {
@@ -8330,32 +8340,84 @@ public class Day77_FirstRepeatedCharacter {
         }
 
         System.out.println("No repeated character found.");
+
         sc.close();
     }
 }
+```
 
-Concepts Covered
+## ▶️ Sample Output
 
-* String handling in Java
-* "Scanner" class for user input
-* "toLowerCase()" method
-* "toCharArray()" method
-* "HashSet" collection
-* "contains()" method
-* Enhanced "for" loop
-* "continue" statement
-* "return" statement
-
-Output
-
+```text
 Enter a string: programming
 First repeated character: r
+```
 
-Learning Summary
+### Another Test Case
 
-Today, I learned how to find the first repeated character in a string using Java. I used a "HashSet" to store characters that have already appeared and the "contains()" method to check for duplicates. This program helped me understand string traversal, collections, and efficient duplicate detection.
+```text
+Enter a string: abcde
+No repeated character found.
+```
 
----
+## 🔍 Dry Run
 
-365 Days of Java Challenge 🚀
+**Input:** `programming`
+
+| Step | Character | HashSet Before | Action |
+|---|---|---|---|
+| 1 | p | `{}` | Add p |
+| 2 | r | `{p}` | Add r |
+| 3 | o | `{p, r}` | Add o |
+| 4 | g | `{p, r, o}` | Add g |
+| 5 | r | `{p, r, o, g}` | Already exists — stop |
+
+**Final Output:**
+
+```text
+First repeated character: r
+```
+
+## ⚙️ How the Program Works
+
+1. Read a string from the user.
+2. Convert the string to lowercase using `toLowerCase()`.
+3. Create a `HashSet` to store visited characters.
+4. Convert the string into a character array using `toCharArray()`.
+5. Traverse the characters one by one.
+6. Check whether the character already exists using `contains()`.
+7. If it exists, print the first repeated character and stop.
+8. Otherwise, add the character to the set using `add()`.
+
+## 🔑 Important Java Methods
+
+| Method | Purpose |
+|---|---|
+| `nextLine()` | Reads a complete line of input |
+| `toLowerCase()` | Converts the string to lowercase |
+| `toCharArray()` | Converts a string into a character array |
+| `contains()` | Checks if an element exists in the HashSet |
+| `add()` | Adds an element to the HashSet |
+
+## ⏱️ Time and Space Complexity
+
+Let `n` be the length of the string and `k` be the number of distinct characters.
+
+- **Time Complexity:** O(n) average
+- **Space Complexity:** O(k)
+
+The HashSet provides average O(1) lookup and insertion.
+
+## ✅ Key Learnings
+
+- Learned how to find the first repeated character.
+- Understood the concept of `HashSet`.
+- Practiced traversing strings using enhanced `for` loops.
+- Learned how to check duplicates using `contains()`.
+- Understood how to use `add()` in HashSet.
+- Improved understanding of time and space complexity.
+
+## 🚀 Challenge Completed!
+
+**Day 77 of my 365 Days of Java Challenge!**
 
