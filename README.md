@@ -8420,4 +8420,101 @@ The HashSet provides average O(1) lookup and insertion.
 ## 🚀 Challenge Completed!
 
 **Day 77 of my 365 Days of Java Challenge!**
+# Day 78 - Remove Duplicate Characters from a String
+
+## Program
+
+**Remove Duplicate Characters from a String in Java**
+
+### Objective
+
+Write a Java program to remove duplicate characters from a string while preserving the original order of characters. Each character should appear only once in the final string.
+
+### Code
+
+```java
+import java.util.*;
+
+public class Day78_RemoveDuplicateCharacters {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        StringBuilder result = new StringBuilder();
+        HashSet<Character> set = new HashSet<>();
+
+        for (char ch : str.toCharArray()) {
+            if (set.add(ch)) {
+                result.append(ch);
+            }
+        }
+
+        System.out.println("String after removing duplicates: " + result);
+
+        sc.close();
+    }
+}
+```
+
+### Sample Output
+
+```text
+Enter a string: programming
+String after removing duplicates: progamin
+```
+
+### Another Example
+
+```text
+Enter a string: banana
+String after removing duplicates: ban
+```
+
+### How It Works
+
+- `Scanner` takes the string input from the user.
+- `HashSet` stores the characters that have already been encountered.
+- `StringBuilder` stores the unique characters in their original order.
+- `toCharArray()` converts the string into a character array.
+- `set.add(ch)` returns `true` if the character is new and `false` if it already exists.
+- Only new characters are appended to the result.
+- Finally, the program prints the string without duplicates.
+
+### Dry Run
+
+Input: `programming`
+
+| Character | Already Exists? | Result |
+|---|---|---|
+| p | No | p |
+| r | No | pr |
+| o | No | pro |
+| g | No | prog |
+| r | Yes | prog |
+| a | No | proga |
+| m | No | progam |
+| m | Yes | progam |
+| i | No | progami |
+| n | No | progamin |
+| g | Yes | progamin |
+
+**Final Output:** `progamin`
+
+### Time and Space Complexity
+
+- **Time Complexity:** O(n) average
+- **Space Complexity:** O(n)
+
+### Key Learnings
+
+- Removing duplicate characters from strings.
+- Using `HashSet` for efficient duplicate detection.
+- Using `StringBuilder` to construct strings efficiently.
+- Preserving the original order of characters.
+
+### Challenge Completed
+
+Day 78 of my **365 Days of Java Challenge**.
 
