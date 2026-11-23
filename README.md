@@ -8517,4 +8517,92 @@ Input: `programming`
 ### Challenge Completed
 
 Day 78 of my **365 Days of Java Challenge**.
+# Day 79 - Count the Number of Words in a String
+
+## Program
+
+**Count the Number of Words in a String using Java**
+
+### Objective
+
+Write a Java program to count the total number of words in a sentence entered by the user. The program handles extra spaces and empty input.
+
+### Code
+
+```java
+import java.util.Scanner;
+
+public class Day79_CountWordsInString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String str = sc.nextLine().trim();
+
+        int count = 0;
+
+        if (!str.isEmpty()) {
+            String[] words = str.split("\\s+");
+            count = words.length;
+        }
+
+        System.out.println("Total number of words: " + count);
+
+        sc.close();
+    }
+}
+```
+
+### Sample Output
+
+```text
+Enter a sentence: Java is easy to learn
+Total number of words: 5
+```
+
+### Another Example
+
+```text
+Enter a sentence: I love programming
+Total number of words: 3
+```
+
+### How It Works
+
+- `Scanner` reads the sentence from the user.
+- `trim()` removes leading and trailing spaces.
+- `isEmpty()` checks whether the input is empty.
+- `split("\\s+")` splits the sentence into words using one or more whitespace characters.
+- `words.length` returns the total number of words.
+- Finally, the program displays the word count.
+
+### Dry Run
+
+Input: `Java is easy to learn`
+
+| Word | Count |
+|---|---:|
+| Java | 1 |
+| is | 2 |
+| easy | 3 |
+| to | 4 |
+| learn | 5 |
+
+**Final Output:** `5 words`
+
+### Time and Space Complexity
+
+- **Time Complexity:** O(n)
+- **Space Complexity:** O(n)
+
+### Key Learnings
+
+- Counting words in a sentence using Java.
+- String manipulation using `trim()` and `split()`.
+- Handling extra spaces in user input.
+- Using string arrays and `length` to count words.
+
+### Challenge Completed
+
+Day 79 of my **365 Days of Java Challenge**.
 
